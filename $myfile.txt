@@ -1,2 +1,0 @@
-$myfile =
-fopen("testfile.text", "w")

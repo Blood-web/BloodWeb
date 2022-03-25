@@ -1,0 +1,383 @@
+body {
+ 
+    background: linear-gradient(
+        180deg,
+        #fffaa1,
+        #afa,
+        #bb1ab1,
+        #aaaaff,
+        #11aaff,
+        #ff11aa,
+        #990099,
+        #11ffad,
+        #444aaa,
+        #ddd111,
+        #999111
+    );
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+td strong {
+    background-color: crimson;    
+}
+a {
+    color: springgreen;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+td {
+    width: 100px;
+    height: 60px;
+    border: 2px solid black;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    background-color: #999111;
+    color: #000;
+}       
+th {
+    width: 150px;
+    height: 100px;
+    background-color: darkmagenta;
+    border: 2px solid black;
+    font-size: 28px;   
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: blanchedalmond;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+table {
+    border: 2px solid black;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    background-color: firebrick;
+}
+button {
+    background-color: crimson;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+thead {
+    font-family: serif;
+    font-size: 24px;
+}
+/* Headers */
+h1 {
+    font-family: Lobster, monospace;
+    font-size: 36px;
+}
+h3 {
+    font-family: Lobster;
+    font-size: 24px;
+}
+h4 {
+    font-size: 48px;
+    font-family: 'lobster', cursive;
+}
+
+/*-------------------- Class list --------------------*/
+.logo {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+.Stask {
+    position: relative;
+    float: right;
+    top: -2000px;
+    font: optional;
+    font-size: 40px;
+    width: 400px;
+    border: 10px solid #000;
+}
+.samps {
+    background-color: blanchedalmond;
+    background: l;
+    color: crimson;
+    text-shadow: 10px black;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+    width: fit-content;
+    position: relative;
+}
+.H-Table {
+    background-color: darkmagenta;
+    border: 2px solid black;
+}
+.hidbu {
+    font-size: 20px;
+}
+
+
+/* Cekk - PGORA0 CHAMP in the chat*/
+.Cekk {
+    font-weight: bolder;
+    font-size: 20px;
+    background-color: #ffffff;
+    max-height: 100px;
+    height: 100px;
+    opacity: 1;
+    
+}
+.Cekk:focus,
+.Cekk:hover,
+.Cekk:hover {
+    animation-fill-mode:forwards ;
+    animation-play-state: running;
+}
+.Cekk:active
+.Cekk:hover::after {
+    opacity: 0;
+}
+.CekkP {
+    border:20px solid #dd11aa;
+}
+.CekkG {
+    border:20px solid #32CD32; 
+}
+.CekkO {
+    border:20px solid orange;
+}
+.CekkR {
+    border:20px solid #f08080;
+}
+.CekkA {
+    border:20px solid #11aaff;
+}
+.Cekk0 {
+    border:20px solid #ffa;
+}
+
+/*     ----Animations----    */
+/* BALLLZ  */
+
+.Ballot {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); 
+    border-right: 10px dashed #32CD32;
+    border-left: 10px dashed #32cd32;
+    border-top: 10px ridge #32cd32;
+    border-bottom: 10px ridge #32CD32 ;
+    width:250px;
+    position: fixed;
+    right: 435px;
+    height: 800px;
+    background-color: seagreen;
+    
+}   
+.Ballot2 {
+    
+ 
+    width:100px;
+    position: fixed;
+    right: 730px;
+    height: 800px;
+
+}    
+.ballmix {
+     height: 100px;
+     width: 100px;
+     display: inline-block;
+     position: fixed;
+     border-radius: 50%;
+     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+     left: 1180px;
+     margin-top: 60px;
+ 
+}
+.ballmix2 {
+    height: 100px;
+    width: 100px;
+    display: inline-block;
+    position: fixed;
+    border-radius: 50%;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    left: 1300px;
+    margin-top: 60px;
+
+}
+.rounded {
+    
+    color: #11ffad;
+    top: 10px;
+   
+}
+.rounded:hover {
+    background-color: chartreuse; 
+    animation-name: Runder ;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+ 
+}
+.rounder {
+    top: 120px;
+}
+.rounder:hover {
+    background-color: chocolate;
+    animation-name: Runder ;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);    
+}
+.roundar {
+    top: 240px;
+    background-color: #dc143c;
+
+}
+.roundar:hover {
+    background-color: hsl(56, 86%, 47%)	;
+   
+    animation-name: Runder ;
+    animation-duration: 1s;
+    animation-iteration-count: 1; 
+    
+}
+.roundad {
+    top: 360px;
+    background-color: #8a2bea;
+}
+.roundad:hover {
+    background-color: #ff11aa;
+    animation-name: Runder ;
+    animation-duration: 1s;
+    animation-iteration-count: 1; 
+    
+}
+.roundz {
+    top: 480px;
+    background-color: blue;
+}
+.roundz {
+    background-color: black;
+}
+.roundz:hover {
+    background-color: coral;
+    animation-name: Runder ;
+    animation-duration: 1s;
+    animation-iteration-count: 1; 
+}
+.roundarz {
+    top: 600px;
+    background-color: #55aa55;
+}
+.roundarz:hover {
+    background-color: #8a2bea;
+    animation-name: Runder ;
+    animation-duration: 1s;
+    animation-iteration-count: 1; 
+}
+.LogicB {
+    color: #000;
+    font-size: 20px; 
+}
+.logicW{
+    color: #fff;
+    font-size: 20px;
+}
+.LogicC {
+    color: aqua;
+    font-size: 20px;
+}
+.Fr:hover {
+   
+    background: linear-gradient(
+        20deg,
+        #55aa55,
+        #a1a1c4,
+        #b5b433
+    );
+    animation-name: RampitF;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+
+.Lr:hover {
+   
+    background: linear-gradient(
+        20deg,
+        #55aa55,
+        #a1a1c4,
+        #b5b433
+    );
+    animation-name: RampitR;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+@keyframes Runder {
+    0% {
+        transform: scale(2);
+    }
+    100% {
+        transform: scale3d(3);
+    }
+}
+@keyframes RampitF {
+    0% {
+        transform: skewX(20deg) scale(2) rotate(360deg);
+        background-color: cadetblue;
+    }   
+    100% {
+        transform: rotate3d(40deg);
+    }
+}
+@keyframes RampitR {
+    0% {
+        transform: skewX(-20deg) scale(2) rotate(-360deg);
+        background-color: cadetblue;
+    }   
+    100% {
+        transform: rotate3d(-40deg);
+    }
+}
+
+/*****************************************/
+/* BALLL IDS */
+#li1 {
+    background-image: url(../Logs/organs.jfif);
+    background-size: contain;
+    font-size: 12px;
+}
+#li2 {
+    background-image: url(../Logs/git.png);
+    background-size: contain;
+}
+#li3 {
+    background-image: url(../GF/fine4.jpg);
+    background-size: contain;
+}
+#li4 {
+    background-image: url(../../Pictures/funny/jmper2.png);
+    background-size: contain;
+}
+#li5 {
+    background-image: url(../Logs/lock.png);
+    background-size:cover;
+}
+#li6 {
+  
+}
+#r1 {
+    background-image: url(../Logs/anon.png);
+    background-size: contain;
+}
+#r2 {
+    background-image: url(../Logs/BloodWeb.jpg);
+    background-size: contain;
+}
+#r3 {
+    background-image: url(../Logs/tork.png);
+    background-size: contain;
+    
+}
+#r4 {
+    background-image: url(../Logs/bcard.png);
+    background-size: contain;
+}
+#r5 {
+    background-image: url(../../Pictures/PUFF/Screenshot\ 2021-11-05\ 181552.png);
+    background-size: contain;
+}
+#r6 {
+    background-image: url(../Logs/nuke.jfif);
+    background-size: cover;
+    background-position-x: -50px;
+    color: #fff;
+    
+}
+/*          HEAD TABLES        */

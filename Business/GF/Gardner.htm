@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gardener family farms</title>
+
+    <link rel="shortcut icon" href="../Logs/Bloodweb/bweb.ico" style="border-radius: 50;">
+    <link href="Gardner.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+
+<div id="card" style="left: 94.5%;"> <p> Did You Know?</p>
+<button id="cardbutton" onclick="movecard()" style="z-index: 2;"></button>
+<span id="cardimage" style="background-image: url(../GF/pic/foodrec.jpg);"></span>
+<p id="didya">para2</p>
+<button onclick="dyn()" style="margin-top: 10%;"> New fact!</button>
+</div>  
+
+  <div><img id="logo" src="../Logs/Bloodweb/BloodWeb.png" alt="Bweb banner" /> <button id="about" style=" border-radius: 50%;"><p style="background-color: aliceblue;">About</p></button></div>
+  <header><h1 onmouseenter="titlehover()" onmouseleave="titlerestore()" id="title" class="title" style="font-size: 8vw; height: 60%;"> Gardner family farms</h1><p id="bodytext"> Farm fresh table oil oil, grown and cured in Brookdale, Western Australia <br> Olives are handpicked and Bottles are seprated by olive species leading to a more refined flavour</p>
+   </header>
+ 
+  <!--<div id="banner" style="background-color: black; color: white; font-size: 60;"> Free shipping on orders over $100 australia wide !!!
+    <i src="../Logs/3arcane.jpg" style="size:10%;" onclick="closebanner()"></i> 
+ </div>-->
+
+   
+    <div style="margin-top: 2%;">
+    <img class="rotate" src=" https://user-images.githubusercontent.com/84670867/149896106-e01b47ff-adf2-40c4-8b82-86d80748e978.jpg" alt="img1" />
+    <img class="rotate" src="https://user-images.githubusercontent.com/84670867/149896098-99ceaa28-cdad-4b0c-af2d-62d196d1d09b.jpg " alt="img2" />
+    <img class="rotate" src=" https://user-images.githubusercontent.com/84670867/149896090-8897355f-b991-4816-820c-53a5b6ff7993.jpg " alt="img3" />
+    <div class="rotate"> Small - 250ML Premium olive oil <br> <p class="price">$25</p> <p> sample text</p> <p>extra sample text to show how line breaks affect div</p>          <button class="s"> Purchase</button></div>
+    <div class="rotate"> Medium - 500ml Premium olive oil <br> <p class="price">$35</p>       <p>sample text</p>    <button class="s"> Purchase</button> </div>
+    <div class="rotate"> Large - 750Ml Premium olive oil <br> <p class="price">$55</p>         <p>sample text</p>   <button class="s"> Purchase</butt></div>
+  </div>
+    
+<div class="like_button_container" style="height: 10%;"data-commentid="1"></div>
+<div class="like_button_container" data-commentid="3"></div>
+</p>
+<form>
+  <label>
+    Name:
+    <input type="text" name="name" />
+  </label>
+  <input type="submit" value="Submit" />
+</form>
+  <footer style="padding-bottom: 1%;">
+    <h6 style="opacity: 0.5; margin-top: 10% ;">LLC Bloodworks&copy; ltd. in association, GFF &copy;, BTD &copysr;</h6>
+  </footer>
+  <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="react.js"></script>
+<script src="Gardner.js" type="text/javascript"></script>
+</body>
+</html>
