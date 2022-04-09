@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="on()">
+
+    <header><h1></h1>
+    <p>sign up:</p> <input type="text"> <p>pass:</p> <input type="text"> <button type="submit" onclick=""></button>
+    </header>
+    
+</body>
+<script>
+app.on('ready', () => {
+    mainWindow = new BrowserWindow({
+        webPreferences: {
+            nodeIntegration: true,
+            contextIsolation: false,
+        }
+    });
+});
+</script>
+<script  src="hash.js"></script>
+
+<script src="salt.js"></script>
+</html>
