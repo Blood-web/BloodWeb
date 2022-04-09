@@ -69,7 +69,7 @@ function rotate() {
     //Had to add background adjust to each & font alteration//
     if (ch.value == 0){
      al.href="https://coinmarketcap.com";
-     be.style.background= "url(../Logs/Pint.png)";
+     be.style.background= "url(i/Pint.png)";
      be.style.backgroundSize="contain"
      de1;
      
@@ -91,7 +91,7 @@ function rotate() {
     else if (ch.value == 2){
     al.href="https://github.com/Blood-web";
 
-    be.style.background= "url(../Logs/jj.jpg)";
+    be.style.background= "url(i/jj.jpg)";
     be.style.backgroundSize="contain";
     be.style.backgroundRepeat="no-repeat";
     
@@ -118,13 +118,36 @@ function flip(){
     if(TB.style.opacity==0){
     TB.style.opacity = 1 ;
     TB.style.zIndex = 1 ;
+    printtable(); setPictureBox();
     }
     else {
         TB.style.opacity = 0 ;
-        TB.style.zIndex = -1 ;
-    }
+        TB.style.zIndex = -1 ; }
 }
 
+function printtable(){
+for (let i = 0; i < Table.length; i++){
+    document.getElementById('Ti'+i).src=Table[i][1];
+    document.getElementById('Tt'+[i]).innerText=Table[i][0];
+    document.getElementById('Td'+[i]).innerText=Table[i][2]; 
+}}
+
+
+
+var PB=0;
+var Pl=['p/0.jpg','p/1.jpg','p/2.jpg','p/3.jpg','p/4.jpg','p/5.jpg'];
+function PBinc(p){
+    if(p==true){ PB++; if (PB>=Pl.length){PB=0;}
+                       
+                    }
+    else if(p ==false){ if (PB<=0){PB = Pl.length-1;}
+                        else{PB--;}
+}
+    setPictureBox();
+}
+function setPictureBox(){
+document.getElementById("PictureBox").src=Pl[PB];
+}
 
 //  COMPLETE me, func for all div balls calling to console   //
 var namo = 
@@ -137,7 +160,7 @@ function (){ namo +'has been called '};
 //  IMG main on hover func//
 
 function DevilOut(){
-    document.getElementById('locko').src="../Logs/p1.jpg";
+    document.getElementById('locko').src="i/p1.jpg";
     console.log('IMG main has been hovered');
 }
 
@@ -148,22 +171,22 @@ function Profile() {
 var locko = document.getElementById('locko');
 var bard = document.getElementById('Probar');
     if (bard.value == 0) {
-        locko.src="../Logs/pumpkin.png";
+        locko.src="i/pumpkin.png";
         console.log('Shift1');
         bard.value = 1;
     }
     else if (bard.value == 1) {
-        locko.src="../Logs/penguino wmark.png";
+        locko.src="i/penguino wmark.png";
         console.log('Shift1');
         bard.value = 2;
     }
     else if (bard.value == 2) {
-        locko.src="../Logs/organs.jfif";
+        locko.src="i/organs.jfif";
         console.log('Shift1');
         bard.value = 3;
     }
     else if (bard.value == 3) {
-        locko.src= "../Logs/nuke.jfif ";
+        locko.src= "i/nuke.jfif ";
         
         console.log('Shift1');
         bard.valued =0;
@@ -246,7 +269,7 @@ function masterunlock(){
 function resetbox(){
     tbox.innerText=" I thouroghly enjoy coding as it allows for digital freedom of expression";
     tbox.style.fontFamily="'Akronim', cursive"; tbox.style.textDecoration="";
-    tbox.style.fontSize="3.5vh";
+   
 }
 //   UPPER BOX    ///
 function Blood() {
@@ -315,6 +338,9 @@ function Twit() {
 }
 
 
+
+
+
 // Master catalugoe   swaps targets and backgrounds//
 var alpha = document.getElementById('image-slide1');
 //Beta - prog bar removed fo easier code //
@@ -335,30 +361,30 @@ function shifteryMast() {
        x = 0;
    }
     else if (x == 1) {
-        alpha.style.backgroundImage = "url(../Logs/Hwiki.jfif)";        charlie.href = "https://wikipedia.org";
+        alpha.style.backgroundImage = "url(i/Hwiki.jfif)";        charlie.href = "https://wikipedia.org";
         delta.innerText = "WikiPedia";  
         console.log("Shiftery Master - 2");
     }
     else if (x == 2) {
-        alpha.style.background = "url(../Logs/11.jfif)";
+        alpha.style.background = "url(i/11.jfif)";
         charlie.href = "../../" ; 
         delta.innerText = "no3";
         console.log("Shiftery Master -3");
     }
     else if (x == 3) {
-        alpha.style.background = "url(../Logs/git.png)";
+        alpha.style.background = "url(i/git.png)";
         charlie.href = "https://github.com/blood-web" ; 
         delta.innerText = "Github";
         console.log("Github");
     }
     else if ( x == 4) {
-        alpha.style.background = "url(../Logs/anon.png)";
+        alpha.style.background = "url(i/anon.png)";
         charlie.href = "https://coinmarketcap.com" ; 
         delta.innerText = "no5";
         console.log("Shiftrey Master -5");
     }
     else if ( x == 5) {
-        alpha.style.background = "url(../Logs/pumpkin.png)";
+        alpha.style.background = "url(i/pumpkin.png)";
         charlie.href = "https://coinmarketcap.com" ; 
         delta.innerText = "Inner text swap - Omega";
         console.log("Shiftery Master -Omega");
@@ -370,69 +396,35 @@ function shifteryMast() {
 
 //Timing function for shiftery script//
 
-/*setInterval(myTimer, 4000)
-function myTimer() {
-    shiftery();
-    console.log('4S - Shiftrey');
-}*/
-
-// Background shifter - SHIFTREY //
-//Else if LOOP, 0-5-0//
-let g = 0;
-function shiftery() {
 
 var L = document.getElementById('boxmain');
+const Background = ['linear-gradient( 40deg, #ddaadd, #11ffad)',
+'linear-gradient( 240deg, #11aa55, #29ace0)',
+'linear-gradient( 120deg, #2acaea, #ffff33, #ff71ce, #01cdfe, #05ffa1, #b967ff, #fffb96)',
+'radial-gradient(circle, #ff0000, #bf0000, #800000, #400000, #000000, #200000)',
+'repeating-conic-gradient(red 10%, yellow 20%)',
+'linear-gradient(to bottom, #6666ff 0%, #3333ff 90%, transparent 100%)',
+'linear-gradient( 120deg, #2acaea, #ffff33, #ff71ce, #01cdfe, #05ffa1, #b967ff, #fffb96)',
+'radial-gradient(circle, #ff0000, #bf0000, #800000, #400000, #000000, #200000)',
+'repeating-conic-gradient(red 10%, yellow 20%)',
+'repeating-radial-gradient( #0bd3d3, #f890e7, #ffffff, #d0d0d0, #000000)'
+];
+var g = "ph";
 
-
-
-    if (g == 0) {
-    L.style.background = "linear-gradient( 40deg, #ddaadd, #11ffad)";
-    g+=1;
-    console.log(' Shiftery changing backgrounds1');
+function startshiftery(rec){
+    if (g=="0" ){killshiftery(); return;}
+    for(let i = 0; i <Background.length; i++ ){
+       
+        setTimeout( function timer(){
+        L.style.background=Background[i];
+        console.log( "Shiftery, Stage: "+i); 
+        if( i==9){startshiftery(true);}
+        }, i* 2000 );}
     }
-    else if (g == 1){
-    L.style.background = ('linear-gradient( 240deg, #11aa55, #29ace0)');
-    console.log('Second background');
-    g+=1 ;      
-    }
-    else if (g == 2) {
-        L.style.background = ('linear-gradient( 120deg, #2acaea, #ffff33, #ff71ce, #01cdfe, #05ffa1, #b967ff, #fffb96)');
-        g += 1 ;
-        console.log('Third background');
-    }
-    else if (g == 3) {
-        L.style.background = ('radial-gradient(circle, #ff0000, #bf0000, #800000, #400000, #000000, #200000)');
-        console.log('fourth background');
-        g += 1;
-    } 
-    else if (g == 4) {
-        L.style.background = ('repeating-conic-gradient(red 10%, yellow 20%)');
-        g += 1;
-        console.log('Fifth background');
-    }
-    else if (g == 5){
-        L.style.background = ('linear-gradient(to bottom, #6666ff 0%, #3333ff 90%, transparent 100%)');
-        console.log('Sixth background');
-        g+=1 ;      
-        }
-        else if (g == 6) {
-            L.style.background = ('linear-gradient( 120deg, #2acaea, #ffff33, #ff71ce, #01cdfe, #05ffa1, #b967ff, #fffb96)');
-            g += 1 ;
-            console.log('background7-g='+g);
-        }
-        else if (g == 7) {
-            L.style.background = ('radial-gradient(circle, #ff0000, #bf0000, #800000, #400000, #000000, #200000)');
-            g += 1;
-           console.log('background8-g='+g); 
-        } 
-        else if (g == 8) {
-            L.style.background = ('repeating-conic-gradient(red 10%, yellow 20%)');
-            g += 1;
-            console.log('background9-g='+g);
-        } 
-    else if (g ==9) {
-        L.style.background = ('repeating-radial-gradient( #0bd3d3, #f890e7, #ffffff, #d0d0d0, #000000)');
-        g = 0;
-        console.log('ShifteryCircuit reset-bck10-g='+g);
-    }
+   
+// Background shifter - SHIFTREY //
+//Else if LOOP, 0-5-0//
+function killshiftery(){
+    g="1";
+    console.log("kill shift");
 }

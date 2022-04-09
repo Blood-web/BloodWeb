@@ -118,7 +118,7 @@ canvas {
     display: inline-block;
     position: inherit;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);    
-    
+   
 }
 .balls {
     height: 100px;
@@ -135,14 +135,29 @@ canvas {
         #ffcccc
       );
       box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  
+  background-size: cover; background-repeat: no-repeat;
+ 
 
 }
 
 /* I am the text box under the image */
+
+#About {
+    top: -10px;
+    color: #00aaff;
+    background-color: #fff;
+    opacity: 0;
+    margin: 4px;
+    text-decoration: underline;
+    border-top: 2px solid #8a2be2;
+    border-left: 4px ridge #aaaaff;
+    border-right: 4px ridge #aaaaff;
+    border-bottom: 2px solid #8a2be2;
+}
 .textbox p {
-    font-family:'Jim Nightshade', cursive ;
-    font-size: 160%;
-   
+    font-family:'Jim Nightshade' ;
+    font-size: 2.1vw;
     font-weight: bold;
     margin-top: 2px;
 }
@@ -164,14 +179,45 @@ canvas {
     border-width: 10px 8px 8px 8px;
     border-style: double;
     box-shadow: 0 10px 20px rgba(1,0,1,0.19), 0 6px 6px rgba(0,0,0,0.23);
-
+}
+/* About me tables */
+#Ti0{ animation: coin 5s forwards infinite;
+  
+}
+@keyframes coin{
+    0%{}
+    50%{transform: rotatey(300deg); }
+    100%{}
+}
+#table{
+    width: 100%;
+}
+tr > td{
+    vertical-align: top;
+    width: 33%;
+}
+.Ttitle{
+    text-align: center;
+    color: wheat;
+    font-weight: bold;
+    font-size:x-large;
+    background-color: black;
+    border-radius: 12%;
+    width: 80%;
+}
+.Timg{
+ border-radius: 20%;   width: 80%; height: 60%;
+}
+.PictureBox > button{
+    color: #00aaff;
+    box-shadow: 0 10px 20px rgba(1,0,1,0.19), 0 6px 6px rgba(0,0,0,0.23); 
+    background-color: #000;
+    border-radius: 22%;
+    font-size: 20px;
 }
 /*Img main*/
-
-
 /*****************************************************************/
 /* Hover animation and key frames, */
-
 p:hover{
     color: #ffff;
     font-family: 'Akronim', cursive;
@@ -187,17 +233,12 @@ p:hover{
 }
 .textbox:hover {
     background-color: #11ffad;
-    max-height: 150px;
-   
-    
+    max-height: 150px;   
 }
 .Rotern:hover {
-    
     animation-name: T-Left;
     animation-duration: 1s;
     animation-iteration-count: 1;
-    
-    
 }
 .ballsy:hover {
     opacity: 1;
@@ -220,8 +261,7 @@ p:hover{
     );
 }
 #Dhands:hover{opacity: 1;}
-p::after {
-   
+p::after {  
     background-color:black ;
 }
 @keyframes B-Shrink {
@@ -241,7 +281,7 @@ p::after {
 /*****************************************************************/
 /* Image slider*/
 #image-slide1 {
-    background: url(../Logs/Hwiki.jfif);
+    background: url(i/Hwiki.jfif);
     background-size: cover;
     background-repeat: no-repeat;
     width: 200px;
@@ -304,7 +344,7 @@ p::after {
         #11ffad
     ); 
 }
-#hiden button {
+#hiden > button {
     box-shadow: 0 10px 20px rgba(1,0,1,0.19), 0 6px 6px rgba(0,0,0,0.23); 
     margin: 2px;
     color: #fff;
@@ -313,62 +353,50 @@ p::after {
     font-size: 20px;
 }
 
-#About {
-    top: -10px;
-    color: #00aaff;
-    background-color: #fff;
-    opacity: 0;
-    margin: 4px;
-    font-size: 20px;
-    text-decoration: underline;
-    border-top: 2px solid #8a2be2;
-    border-left: 4px ridge #aaaaff;
-    border-right: 4px ridge #aaaaff;
-    border-bottom: 2px solid #8a2be2;
-}
 
 
 /*Rotatered??*/
 #HT{opacity: 0;}
-#Bweb { opacity: 0.5;
-    background-image: url(../Logs//Bloodweb/BloodWeb.png); background-size: contain; background-repeat: no-repeat; background-position-y: center;
-    background-color: #00000055;}
+#Blood { 
+    background-image: url(i/bb.png);
+   
+    background-color: #afafff;}
 #HB{opacity: 0;}
 #Dhands { opacity: 0.5;
-    background-image: url(../Logs/dhands.jpg); background-size: contain; background-repeat: no-repeat;
+    background-image: url(i/dhands.jpg);
 }
-#Duo {background-image: url(../Logs/DL.png); background-size: contain; background-repeat: no-repeat;
+#Duo {background-image: url(i/DL.png);
 
 }    
 #Fb {
-background-image: url(../Logs/FB.png); background-size: contain; 
+background-image: url(i/FB.png); 
 }
 #Git {
-background-image: url(../Logs/git.png); background-size: contain;
+background-image: url(i/git.png); 
 }
 #Igg {
-background-image: url(../Logs/Insta.jfif); background-size: contain;   
+background-image: url(i/Insta.jfif);    
 }
 #LinkD {
-background-image: url(../Logs/linkd.png); background-size: contain;
+background-image: url(i/linkd.png); 
 }
 #Mail {
-background-image: url(../Logs/Mail.png); background-size: contain; 
+background-image: url(i/Mail.png); 
 }
 #Pint {
-background-image: url(../Logs/Pint.png); background-size: contain; 
+background-image: url(i/Pint.png);  
 }
 #Redd {
-background-image: url(../Logs/redit.png); background-size: contain; 
-}
+background-image: url(i/redit.png);  
+}   
 #Stack {
-background-image: url(../Logs/Stack.png); background-size: contain;
+background-image: url(i/Stack.png); 
 }
 #Tik {
-background-image: url(../Logs/tik.png); background-size: contain; background-position-x: center; background-position-y: center;
+background-image: url(i/tik.png);  
 }
 #Twit {
- background-image: url(../Logs/TWITTER\ CC.png); background-size: contain;  background-position-x: center; background-position-y: center; background-repeat: no-repeat;
+ background-image: url(i/twit2.jfif); 
 } 
 
 
@@ -425,3 +453,7 @@ background-image: url(../Logs/tik.png); background-size: contain; background-pos
          margin-top: 20px;
         float: right;
         }
+
+
+
+
