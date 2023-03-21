@@ -1,0 +1,2 @@
+USE Users;
+SELECT id AS i, firstname AS first,lastname AS last,role,subroles as Srole,shares as $,fshares as F$,diamonds as D$,bombs,totalBombs as Tbombs,phoneNumber as '#', email as '@', birthday as bday , LastLoginDate as lastLogin FROM HODLERS;

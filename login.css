@@ -1,0 +1,149 @@
+* {box-sizing: border-box}
+
+
+
+/*///////////////*/
+/* LOGIN */
+
+/* Non logged in elements*/
+.loggedIN{background:repeating-linear-gradient(60deg,#ff000060,red,red,#ff000060,red);}
+.loggedOUT{background-image: url(/i/BloodW.png); background-position: center; background-repeat: no-repeat; background-size:contain;
+animation: BloodWeb_Move 60s linear 10s infinite forwards; max-height: 80vh; pointer-events:none;
+}
+
+@keyframes BloodWeb_Move{
+  from{background-position: center;}
+  25%{background-position: top;}
+  50%{background-position: center;}
+  75%{background-position:bottom;} 
+  to{background-position: center;}
+}
+.loggedOUT>*:not(#Login_Switch){opacity: 0; user-select:none;}
+.loggedOUT>#Login_Switch{animation:alert_Login 2.5s linear forwards infinite;}
+@keyframes alert_Login{
+  from,10%{transform: scale(1.2);}
+  to{}
+}
+
+#Login_Replacement{
+    background-color: aquamarine;
+    margin: 0 auto;margin-left:0;
+    padding: 1.25% 3% ; 
+    min-height: 1.8pc;min-width: fit-content;
+    display: inline-flex; justify-content: space-between; align-items: center;
+    border: 1px double green; text-align: left; 
+}
+#Login_Replacement>*{ display: inline; vertical-align:middle; }
+#Login_Switch{opacity: 1;}
+
+/* Full-width input fields */
+  .container>input[type=text], .container>input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+#Login_Switch,
+#SignUp_Switch,{
+    margin-bottom: .8vh;
+    max-width: 40%;  margin: 0.68vh 0vw;}
+#Login_Switch{ width: min(180px,24vw); margin: 1%; min-height:1.4pc;  float:left; font-size:min(16px,3vw);}
+#SignUp_Switch{float: right;}
+
+
+#User_Name{margin: 0 auto; text-align: center; vertical-align: middle; padding: 1% 4% 1% 0%;}
+#User_Extra_Toggle{}
+
+
+/* Add a background color when the inputs get focus */
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.container>button{display: block;margin: 0 auto;}
+/* Set a style for all buttons */
+.container>button,#SignUp_Switch {width: min(100%,40vw); }
+.container>button,#SignUp_Switch ,#Login_Switch,#Logout_Switch{
+  background-color: #04AA6D;
+  color: white;
+  padding: min(1.2vw,14px) min(1.5vw,20px);
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+
+
+/* Add padding to container elements */
+.container {
+  padding: min(14px,4vh);
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #474e5d;
+  padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+.imgcontainer{padding: 0% 6%; background-color: #80008055; border: 2.5px double #f1f1f1;}
+.imgcontainer>*{display: inline-block; font-size: min(4.8vw,18px);}
+.imgcontainer>img{ border-radius: 40%; padding:1%; background-color: #ddd; width: min(6.8vw,30px); height: min(6.8vw,30px); margin-right:3%; vertical-align: middle;}
+/* Style the horizontal ruler */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+.psw{display: inline-block;}
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+

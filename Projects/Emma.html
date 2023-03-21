@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            background-color: aqua;
+            border: 4vmin double goldenrod;
+        }
+        img{
+            width:40px; height: 40px;
+        }
+        div::first-line{
+            text-align: center;
+            font-weight: 700;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    
+    <script src="../BusinessCard/JS/KeyFunctions.js"></script>
+    <script>
+
+    const Crystals = [
+        {'Agate':'Makes you fart','Quantity':'20'},
+        {'Emerald':'Cool Pokemon game','Quantity':'3'},
+        {'Farts':'Cool Pokemon game','Quantity':'3'}
+    ]
+
+    for (let i =0; i < Object.keys(Crystals).length; i++) {
+        let name = Object.keys(Crystals[i])[(0)];  let text = Object.values(Crystals[i])[(0)];
+        let quant = Object.values(Crystals[i])[(1)];        
+        console.log(name);
+
+
+        let div = createElement('div');
+
+        let img = createElement('img',{ id: name, className: 'ContactIcon',src:name+'.png' });
+        let tet = document.createTextNode(name+BR()+' - '+text+'- Own: x'+quant);
+
+        div.append(img,tNode(name),BR(),tNode(text),BR(),tNode("own: X"+quant));
+        document.body.append(div,BR());
+}
+    </script>
+</body>
+</html>

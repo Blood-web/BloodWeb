@@ -1,0 +1,301 @@
+const Blood_Web={
+    live:false,
+    Version:[1.03],//Requires Communal Footer
+    BuildTypes:['XRG','CRO','NNA','LUM'],
+    Seed:"-42-0X"+randomNum(0,9)+randomNum(0,9)+randomNum(0,9)+randomNum(0,9)+randomNum(0,9)+randomNum(0,9)+randomNum(0,9)+randomNum(0,9)+"ef",
+    loadPos:'',
+
+    tools:{
+        hiddenInput:function(){loodWeb_Floating_Input
+    }},
+
+    Nav_Settings:{
+
+        Elements:[
+            ['Hewers Trust','/Hewers_Trust/index.php','/i/Hewers.png'],
+            ['Bomber Field','/BattleShip/index.php','/i/bomb.png'],
+        ],
+    },
+ 
+    appendNavEle:function(title,href,subEles,callbackFuncs){let Priors = document.querySelectorAll('div[class*="Bloodweb_OpenNav_Section"]').length;
+        let nav = document.querySelector('#BloodWeb_OpenNav');
+   
+        let x;
+       
+        
+        for (ele in subEles){  let a = createElement('a',{innerHTML:subEles}); 
+        a.addEventListener('click',function(){console.log(`calling appended nav func = ${callbackFunc}`);eval(callbackFunc);})
+        x+=a;}
+
+        nav.insertAdjacentHTML("beforeend",
+        `<div onclick="!document.title.includes(${title}?window.location=${href}:" class="Bloodweb_OpenNav_Section${Priors}"><p>${title}</p> <span class="Bloodweb_NavSelections">${x}</span> </div>`);
+    }
+}
+const UserSheet = {
+    User:'', LoggedInUser:[],
+    users:[],
+    userList:[], Share_Total:0,
+
+    pushUsers:function(first,last,shares,fshares,Diamonds,bombs,role,subroles,phone,email,age){
+        let a ={'firstname':first,'lastname':last,'shares':shares,'fshares':fshares,'Diamonds':Diamonds,'bombs':bombs,'subroles':subroles,'phoneNumber':phone,'email':email,'Role':role,'age':age}
+        UserSheet.users.push(a);
+        UserSheet.userList.push(first);let x=LS_Name();
+        first!='Jack'?UserSheet.Share_Total+=shares:false;
+        if(x===first){UserSheet.LoggedInUser=a; this.User=first; console.log(`Caught: name = ${LS_Name()} a = ${first} cd=${UserSheet.LoggedInUser.firstname}`); }
+    },
+    return_Name:function(name){for (i in this.users){if(this.users[i].firstname!=name)continue;} return this.users[i]; }
+
+}
+const BattleBoard = {
+    Rules:{
+        Bomber:{
+            Prizes:['FreeBomb','Diamonds','1(FS)','FreeBombx2','2(FS)'],
+            MinMinorWins:3,
+            MaxMinorWins:5,
+            MajorWins:1,
+    }},
+    GameSheets:{
+        BomberField:{},
+        BomberFieldOLD:{},
+
+    },
+ 
+    logs:{BomberField:[],BomberFieldWinLogs:[],},
+    methods:{
+        addShipLogs:function(l){BattleBoard.logs.BomberField.push(l);},
+        PushShip:function(main,id,mnWins,mjWins,fbWins,hits){ let x={'inPlay':main,'id':id,'Mnr_Wins':mnWins,'Mjr_Wins':mjWins,'freeBombs':fbWins,'hits':hits};
+            if(main===0){return x=BattleBoard.GameSheets.BomberField=x;}
+            BattleBoard.GameSheets.BomberField.push(x);
+        },
+        TestShipBoard:function(){ 
+            let x = document.querySelectorAll('button[id*="BS_Square_"]');
+            for (i in x){ if(x[i]&&x[i].id){let ids =x[i].id.slice(-2); //console.log(`id = ${ids}`)
+            let BGB = BattleBoard.GameSheets.BomberField; let FBS = BGB.freeBombs
+                    if(BGB.hits.includes(ids)){ x[i].disabled = 'disabled';console.log(`Hit : ${ids}`)
+                        if(BGB.Mnr_Wins.includes(ids)){x[i].className="MnR";}
+                       if( BGB.freeBombs.includes(ids)){
+                            x[i].className="FBS";}
+                       else if(){}
+                       else{x[i].className="HIT"; } 
+                }
+                }       
+            }
+        }   
+    }
+}
+
+function BuildStats(){let overlay = createElement('div',{style:'width:min-content; background-color:#fafafaa5; border:2px double #0a0a0a55;',innerHTML:`<button id="NSS_Switch" onclick="ToggleNerdStats()">StatsForNerds~</button`});
+    currentDate = new Date();
+let dateString=currentDate.getUTCDate()+"/"+(currentDate.getUTCMonth()+1)+"/"+currentDate.getFullYear();
+
+let types=['Ver','Seed','Date'];
+    let data=[
+        `BloodWeb_PublicBuild_Ver${Blood_Web.Version}&circledast;`,
+        Blood_Web.BuildTypes[randomNum(0,Blood_Web.BuildTypes.length)]+Blood_Web.Seed,
+        "Last build date:"+weekDay[currentDate.getDay()]+" "+dateString
+    ];
+
+    const SetBloodWebStyleRules=function(params) {
+        createStyleRule("a,button,input[type='submit']","cursor:pointer;")
+        createStyleRule('#NSS_Switch','display:block;font-size:x-small;color:blue; margin:0 auto; margin-left:1%; ');
+        createStyleRule('.Nerd_Stats','display:none; max-width:fit-content;  margin:0 auto;margin-right:1%;  text-align:right; font-size:xx-small;');
+        
+        //NAV && Footer
+        createStyleRule('#BloodWeb_Nav,#BloodWeb_Footer','z-index:2; background:repeating-radial-gradient(at top left, #cd12c7ef,white,#ae2ad6f0,#bc03b8ef,#cd12c7ef,white,#cd12c7ef); border: min(8px,2vw) double purple;');
+
+        createStyleRule('#BloodWeb_Nav','width:100%; padding: .75% 1.25%; margin-bottom:0.64vh;top:0; position:sticky; display:flex; align-items:center;'); 
+        createStyleRule('#BloodWeb_NavSwitch','text-align:center; width: min-content;height:min-content;padding:0 2%; margin-right:0;  font-size: min(8.4vw,38px);color: #fff;  background-color: #04AA6D; -webkit-text-stroke:min(1.8px , .1rem) #0000003a;  ');
+        createStyleRule('#BloodWeb_Nav>span','height:min-content;');
+        
+        
+    
+        createStyleRule("#BloodWeb_OpenNav",'position:fixed; top:0; left:0; Z-index:4; width:min(68vw,450px); height:100vh; background-color:#3fa3fae9; border:2px double #0000eaff; margin-top:.4%; padding:2%;');
+        createStyleRule("#Bloodweb_OpenNav_Title","height: min(60px,8vh); display:flex; flex-wrap:no-wrap; justify-content:space-between; align-items:center; `margin-top:0.4vh; border:min(3px,3vw) double #000000;");
+        createStyleRule("#Bloodweb_OpenNav_Title>*","");
+        createStyleRule("#Bloodweb_OpenNav_Title>#OpenNav_Title","display:inline; width:min-content; padding:2% 4%; margin:0 auto; margin-left:0; border:min(2px,2vw) double #00000055;");
+        createStyleRule("div[class*='Bloodweb_OpenNav_Section']>* ,span[class*='Bloodweb_NavSelections']>*","padding:1.2%; ");
+        createStyleRule("#BloodWeb_OpenNav>*:not(#Close_OpenNav),span[class*='Bloodweb_NavSelections'] ",' background-color:#3fa3fae9; ;');
+        createStyleRule("div[class*='Bloodweb_OpenNav_Section']","margin-top:min(10px,1vh); border:2px solid #0000006a; ");
+     
+        createStyleRule("div[class*='Bloodweb_OpenNav_Section']>p::after","content:'▼'; float:right; ");   
+        createStyleRule("span[class*='Bloodweb_NavSelections']>a","border:1px solid gray; color:blue; text-decoration:underline; display:block;");    
+        createStyleRule("#Close_OpenNav","font-size:x-large; width:min-content; border:1px solid #0000008a; padding:0 2%; opacity:0.75; margin-left:auto;");
+       /* createStyleRule("#Bloodweb_NavLogo","padding:2%;")
+        createStyleRule("#Bloodweb_NavLogo>*",'display:inline; ')
+          createStyleRule("#Bloodweb_NavLogo>img",'max-width:min(8vw,38px); max-height::min(8w,38px); border:1px solid purple;')
+   */
+    }
+    SetBloodWebStyleRules();
+
+    for (e in types ){ let p = createElement('p',{className:"Nerd_Stats",id:"Build_"+types[e], innerHTML:data[e], style:'display:none;'});
+        overlay.append(p);    
+    }
+    document.body.append(overlay);
+
+}
+function Build_Footer(){let overlay = createElement()
+
+}  
+
+function ToggleNerdStats(){
+    let t = document.querySelectorAll('.Nerd_Stats');
+    for (let i = 0; i < t.length; i++) {const e = t [i];
+        e.style.display=="none"?e.style.display="block":e.style.display="none";
+    }
+
+
+}
+
+const loadLogin = function(){
+console.log('Loading Login');
+    let Load_HTML = function (){
+        document.body.insertAdjacentHTML('afterbegin',
+        `<input id="BloodWeb_Floating_Input" name="BloodWeb_Floating_Input" type="hidden" hidden />
+        
+        <div id="BloodWeb_OpenNav" style="display:none;">      
+              
+                <div id="Bloodweb_OpenNav_Title">
+                    <p id="OpenNav_Title">BloodWebV${Blood_Web.Version}</p>
+                    <p id="Close_OpenNav" onclick="document.getElementById('BloodWeb_OpenNav').style.display='none'">X</p>    
+                </div>
+                
+                <div class="Bloodweb_OpenNav_Section"> 
+                <p onclick="Toggle_Ele(document.getElementById('Bloodweb_NavSelections'),'block')">The Hewers Trust</p> 
+                <span id="Bloodweb_NavSelections"></span></div>
+            </div>
+
+    <nav id="BloodWeb_Nav">
+        
+        <span id="Login_Replacement" >
+            <p id="User_Name" name="User_Name" style="display: none">NULL</p>
+            <button id="Login_Switch" onclick="document.getElementById('Login_Modal').style.display='block';">Login</button>
+            <button id="Logout_Switch" onclick="logout()" style="display: none;">Logout</button>
+        </span>         
+
+        <button id="BloodWeb_NavSwitch" onclick="document.getElementById('BloodWeb_OpenNav').style.display=='none'?document.getElementById('BloodWeb_OpenNav').style.display='block':document.getElementById('Bloodweb_BloodWeb_OpenNav').style.display='none';">&Congruent;</button>
+       
+        <!--<span id="Bloodweb_NavLogo"><img src="/i/BloodW.png"/><p>BloodWeb</p></span>-->
+       
+    </nav>
+    <!-- The Modal -->
+            <div id="Login_Modal" class="modal">
+                <span onclick="document.getElementById('Login_Modal').style.display='none'" class="close"
+                    title="Close Modal">&times;</span>
+        
+                <!-- Modal Content -->
+                <form class="modal-content animate" action="/Login.php">
+                    <div class="imgcontainer">
+                        <img style="display:inline;" src="/i/BloodW.png" alt="Avatar" class="avatar">
+                        <p >BloodWeb - Portal</p>
+                     
+                    </div>
+        
+                    <div class="container">
+                        <label for="phoneNumber"><b> Phone-Number</b></label>
+                        <input type="text" placeholder="ex. 0412000212" name="phoneNumber" required>
+        
+                        <label for="psw"><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" name="psw" required >
+        
+                        <label>
+                            <input type="checkbox" checked="checked" name="remember"> Remember me
+                        </label>
+                        <button type="submit">Login</button>
+
+                         
+        <div class="container" style="background-color:#f1f1f1">
+                       <!-- <span class="psw">Forgot <a href="#">password?</a></span>
+                        -->
+                       <button type="button" onclick="document.getElementById('Login_Modal').style.display='none'"
+                            class="cancelbtn">Cancel</button>
+                    </div>
+                    </div>
+        
+                    
+                </form>
+            </div>`
+           /* 
+           <!-- SignupSwitch & SignupModal
+            
+            <button id="SignUp_Switch" onclick="document.getElementById('Sign_Up_modal').style.display='block'">Sign Up</button>
+            
+            
+            */
+        );
+    } 
+    Load_HTML();
+}
+
+const login= function(p){
+    LS_Name(p);
+    let SetSwitchStatus = function(){ let Priors = document.querySelectorAll('.Bloodweb_OpenNav_Section').length;
+        
+        document.getElementById('Login_Switch').style.display="none";
+        
+        let t = ['User_Name',"Logout_Switch"];
+        for (ele in t){document.getElementById(t[ele]).style.display="";}
+    }
+    const Set_User = function(){ 
+        document.getElementById("User_Name").innerText=UserSheet.LoggedInUser.firstname;
+        
+    }
+    const Set_Styles = function(){const args=['header','main'];
+        for(ele in args){if(document.querySelector(args[ele]))document.querySelector(args[ele]).className="loggedIN";
+        }
+    }
+
+   SetSwitchStatus(); Set_User(); Set_Styles();
+}
+const logout = function(){
+    localStorage.removeItem('name');
+    setTimeout(() => {
+      window.location.reload();  
+    }, 20);
+    
+}
+
+let x0 = function(){const args=['header','main'];
+for(ele in args){document.querySelector(args[ele]).style.backgroundColor="blue";} 
+}
+function SetLinks(WD) {
+    for (ele in WD) {
+        let targ = createElement('a',{className:'FFW',id: "FFW"+WD[(ele)][0],'style': 'background-image:url(' + WD[(ele)][2] + ');',href: WD[(ele)][1],innerText : WD[(ele)][0]});
+        document.querySelector('main').append(targ);
+    }
+}
+setTimeout(() => {
+
+   function LoadDefaultNavs(){ 
+    let x = Blood_Web.Nav_Settings.Elements;
+   if(UserSheet.User=='t'){let a =['Admin-Log','/Hewers_Trust/TrustLog.php','/i/s3.png']; 
+    x.push(a);
+   }
+   else{console.log('nopre')}
+    for( ele in x){
+        if(document.title.includes("BloodWeb.net")){SetLinks([x[ele]]);}
+        Blood_Web.appendNavEle(x[ele]);
+    }
+    
+   }
+
+   
+    
+   const AUTO_LOGIN = function() {
+        
+        let l = LS_Name(); console.log(`Trying to login, name = ${l}`);
+        if(l!=''&&l!=undefined){UserSheet.userList.includes(l)?login(l):console.log(`Name "${l}" doesn't match available users`);
+        }
+        else{console.log('No name in local storage for login')}
+    }
+ 
+   if(!document.title.toLocaleLowerCase().includes('login')){
+    if(Blood_Web.live===false && !document.title.includes('TEST-SYS')){
+        setTimeout(() => { if( UserSheet.User==='Jack' || UserSheet.User==='t' ){ return; }
+           return document.body.innerHTML=`<p style="text-align:center;"> &#128736; This site is currently undergoing maintainence &#128736;<br> We are working hard to get it up and running! Your patience is appreciated </p>`;}
+        ,48);}
+   loadLogin();
+    BuildStats();
+    AUTO_LOGIN(); LoadDefaultNavs();
+   }
+}, 1);
+
