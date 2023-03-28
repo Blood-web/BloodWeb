@@ -1,9 +1,6 @@
 <script src="https:/www.jackewers.com/JS/KeyFunctions.js" type="text/javascript"><!-- Adds key functions--></script>
 <script src="BloodWeb_Load.js" type="text/javascript"></script>
-<?php 
-include('./PHP/GetUsers.php');
 
-?>
 
 
 <html lang="en">
@@ -17,12 +14,16 @@ include('./PHP/GetUsers.php');
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="Assets.css">
     <link rel="stylesheet" href="TaskList/Tasklist.css">
-    <link rel="stylesheet" href="BloodWeb_Styles.css"> 
+    <link rel="stylesheet" href="BloodWeb_Styles.css" type="text/css"> 
     <link rel="shortcut icon" href="i/₿.ico" type="image/x-icon">
     <link href="TaskList/Tasklist.css" rel="stylesheet" type="text/css">
 
 </head>
 
+<?php 
+//include('./PHP/GetUsers.php');
+
+?>
 
 <body onload="OL();">  
     

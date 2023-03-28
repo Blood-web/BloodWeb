@@ -256,15 +256,13 @@ return obj;
 let Return_SharesPercent= function(user){return (user.shares/HT.SharesA*100-(1/HT.HODLers.length)).toFixed(2)+"%";}
 let Return_SharesValue= function(shares,fshares){return fshares==true?shares*HT.value/5:shares*HT.value;}
 
-function Toggle_Ele(element,DisplayType,enforce){let x = element; if(enforce===true||x.style.display=="none"){x.style.display=DisplayType}else x.style.display="none";}
-const CToggle_Ele=function(arr){for(e in arr){let a = arr[e]; Toggle_Ele(a[0],a[1],a[2]??null)}}
 
 function Toggle_E_Visibility(eID,y){let x = document.getElementById(eID); !y||y==''?(x.hidden!=false?x.hidden=false:x.hidden=true):x.hidden=y;}
 
 let t3=function(){CToggle_Ele([[Z.Build_Area,'none',true],[document.querySelector('header'),'inline',true]]);}
 
 let ToggleEscrow = function(){const x = document.getElementById('Escrow_Div');
-    Toggle_Ele(x,'flex',false);
+   Toggle_Ele_Display(x,'flex',false);
     const ted=[document.getElementById('TES_0'),document.getElementById('TES_1')];
     if(x.hidden==true){x.hidden=false;ted[1].style.color="#000"; return ted[0].style.color="green";}
     x.hidden=true;ted[0].style.color="#000"; return ted[1].style.color="red";
@@ -440,7 +438,7 @@ function Build_Hewers_NavPage(type){ // Builds Pages, Use Finance_Keys
             break;
     }
     
-    Toggle_Ele(Z.Build_Area,'block',true);
+   Toggle_Ele_Display(Z.Build_Area,'block',true);
 }
 
 let loadUserStats = function(user){ 
@@ -622,7 +620,7 @@ Build_Hewers_NavPage('Members');
 
 let Pages =['Details','Key-Dates','Members','HODLings'];
 for (e in Pages){
-   Blood_Web.appendNavEle(Pages[e],`Build_Hewers_NavPage('${Pages[e]}')`);
+   BWEB.appendNavEle(Pages[e],`Build_Hewers_NavPage('${Pages[e]}')`);
 }
  
 //time may be an issue, adjust as needed
