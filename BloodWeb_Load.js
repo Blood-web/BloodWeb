@@ -2,7 +2,6 @@ function ImportScript(url){
     let script = createElement('script',{'src':url});
     document.head.appendChild(script);
 }
-document.title.onChange= function(){console.log('title Chnage');}
  const BWEB = { //₿
     live: true,
     Version: [1.03],//Requires Communal Footer

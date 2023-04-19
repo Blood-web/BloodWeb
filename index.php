@@ -1,7 +1,5 @@
-<script>document.querySelector('title').addEventListener('change',function(){console.log('CHNAGEXXXXXXXXXXXXXXXXXXXX')})</script>
-
-<!--<script src="https:/www.jackewers.com/JS/KeyFunctions.js" type="text/javascript">  </script>
---><script src="BloodWeb_Load.js" type="text/javascript"></script>
+<script src="./KeyFunctions.js" type="text/javascript"> </script>
+<script src="BloodWeb_Load.js" type="text/javascript"></script>
 
 
 
