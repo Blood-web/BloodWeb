@@ -1,21 +1,22 @@
 /* Local */
+
 const LS_Name = function (s) {
     if (s == '' || s == undefined) return localStorage.getItem('name');
-    localStorage.setItem('name', s);
+    else{localStorage.setItem('name', s);}
 }
-let log = function (t) { console.log(t); }
 
 function allowDrop(event) { event.preventDefault(); }
 
+// console
+
+function log(l){console.log(l);}
+
 // Numer
 function randomNum(min = 0, max = 17) { return Math.floor(Math.random() * (max - min)) + min; }
-
-function isEven(num) {
-    if (!num || isNaN(num)) return console.error('Num required');
+function isNeg(x) { if (!isNaN(x) && x < 0) { return true; } }
+function isEven(num) {if (!num || isNaN(num)) return console.error('Num required');
     return (num % 2 == 0) ? true : false;
 }
-function isNeg(x) { if (!isNaN(x) && x < 0) { return true; } }
-
 function setRange(i, min, max) {
     if (i < min) i = min;
     else if (i > max) i = max;
@@ -93,37 +94,30 @@ let daysUntil = function (date) {
     let diff = date - today; return Math.floor(diff / (1000 * 60 * 60 * 24));
 }
 
+    
+// Check Page
+let isSafari = /.*Version.*Safari.*/.test(navigator.userAgent);
 let isPHP = function () {
     if (window.location.href.includes('php')) { return true; }
     return false;
 }
 
+
 // Page maninpulation
-let isSafari = /.*Version.*Safari.*/.test(navigator.userAgent);
 
-function ScrollHome(dir, target) {
-    let WindowFrame = document.body.scrollTop || document.documentElement.scrollTop || window.scrollY;
-
-    if (WindowFrame > 0) {
-        window.requestAnimationFrame(ScrollHome);
+function ScrollHome(dir, target) {let WindowFrame = document.body.scrollTop || document.documentElement.scrollTop || window.scrollY; // Catch all devices
+    if (WindowFrame > 0)  window.requestAnimationFrame(ScrollHome);
         window.scrollTo(0, WindowFrame - (WindowFrame / 5));
-        console.log('Window Scroll location = ' + WindowFrame);
     }
-}
-
-function ScrollTarget(dir, target) {
-    let Frame = document.getElementById(target).scrollTop;
-
-    if (Frame > 0 && dir != 'V') { }
-
 }
 
 let reloadPage = function () { window.location.reload(true); return false; }
 
-//Edit Elements
+
+//Edit Element display
+
 const Toggle_Ele_Display = function (element, DisplayType, enforce) { let x = element; if (enforce === true || x.style.display == "none") { x.style.display = DisplayType; } else x.style.display = "none"; }
 const CToggle_Ele = function (arr) { for (e in arr) { let a = arr[e]; Toggle_Ele_Display(a[0], a[1], a[2] ?? null) } }
-
 
 
 // Styles and elements
@@ -142,9 +136,7 @@ function setAttributes(el, attrs) {
     }
 }
 
-function createStyleRule(name, rules) {
-    var style = document.createElement('style');
-    style.type = 'text/css';
+function createStyleRule(name, rules) { var style = createElement('style',{type:'text/css'});
     document.getElementsByTagName('head')[0].appendChild(style);
     if (!(style.sheet || {}).insertRule)
         (style.styleSheet || style.sheet).addRule(name, rules);
