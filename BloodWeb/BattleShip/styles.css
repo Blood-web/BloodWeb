@@ -1,0 +1,27 @@
+*{margin:0 auto;  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);}
+h1{text-align:center; font-size:10vw;}
+h6{font-size:4vw; text-align:center; border:3px double red;}
+body{background:seagreen; padding:1%; font-size:4vw;} 
+
+#UPPER_Ship{display:flex; justify-content:center; align-items:space-evenly;}
+#UPPER_Ship>*{ background-color:#0000af55;}
+#UPPER_Ship>*>button>p{ font-size:min(6vw,32px);}
+#LOG{margin-left:3%;} #Ship_Rules{margin-right:3%;}
+#Log_Report,#Rule_Field{ overflow:scroll; position:absolute; background-color: lightblue; height:min(max(100vw,60vh),500px); width:min(50vw,500px);    }
+#Log_Report{left:0;}#Rule_Field{right:0;}
+#Log_Report>p,#Rule_Field>p{margin:0 auto; text-align:center; margin-bottom:1.8%; font-weight:600;}
+/**/
+
+
+#BattleShip_Field{display:flex; flex-wrap:wrap; justify-content:center; align-items:center; margin-bottom:1%; border:min(4px,.1vw) double #faf;} 
+#BattleShip_Field>[id^="BS_Square"]{width:12%;height:12vw ; text-align:center; border-width:min(1vw,2px); border-style:solid; margin:0;  background-color:#030;} 
+#BattleShip_UX{display:flex; justify-content:space-between; align-items:center; font-size:min(5vw,32px); text-align:center;}
+#BattleShip_UX>*{display:inline-block; width:30%; margin:0; font-size:inherit;}
+#BattleShip_UX>*:not(#Add_Bomb){background:repeating-radial-gradient(ellipse AT bottom, #fafafa, #faf,#f9f9f9,#fafafa,#eaeaea);}
+#BattleShip_UX>span>p>p{font-size:xx-small;}
+#Add_Bomb{border: 1px double black; background-color:#faf; display:block; margin:0 auto; font-size:min(3.6vw,14px); width:38%; -webkit-text-stroke:min(.2vw,4px) red;}
+#Add_Bomb::first-line{font-size:min(6vw,38px); }
+*[id^="BS_Square"]{}
+*[id^="BS_Square"]:not(.HIT)::before{content:"-1💣"; display:block; border-color:blue; font-size:xx-large;}
+.HIT{border-color:red;}
+.HIT::before{color: #faf; --webkit-text-stroke:2px red; content:'X'; font-size:10vw; display:block; user-select:none; background-color:black; margin:0 auto; height:max-content;}

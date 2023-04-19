@@ -1,19 +1,20 @@
+<html>
 <script src="https:/www.jackewers.com/JS/KeyFunctions.js" type="text/javascript"><!-- Adds key functions--></script>
 <script src="BloodWeb_Load.js" type="text/javascript"></script>
 <script src="index.js"></script>
+<link type="text/css" rel="stylesheet" href="./login.css">
 <title>Login</title>
+<body id="LS_BODY">
 <?php 
 
 session_start(); 
 
-
+$return_timer = 3; //seconds
 $referer = $_SERVER['HTTP_REFERER'];
 
-$server_name = "localhost";
-$user_name = "BloodWeb";
-$password = "Blood.Net";
-$DBNAME ="Users";
-$connection = mysqli_connect($server_name, $user_name, $password, $DBNAME);
+include_once('./PHP/GetUsers.php'); //
+
+
 function LOGIN(){
    $phoneNumber = str_replace(' ','' ,$_REQUEST['phoneNumber']);
    $Replace = array("+61");
@@ -28,8 +29,8 @@ function LOGIN(){
             $row = mysqli_fetch_assoc($result);
 
             if ($row['phoneNumber'] = $phoneNumber && $row['password'] = $pass) {
-                echo "<h1>You have successfully LoggedIn!<h1>";
-                echo "<script> console.log('Logged IN');LS_Name('".$row["firstname"]."');login('".$row["firstname"]."');</script>";
+                echo '<p class="LS_Box_Text"><b>You have successfully LoggedIn!</b></p> <script>BWEB.tools.appendFixedLogo(document.body);</script>';
+                echo "<script> console.log('Logged IN - Appending logo -- adding name -- Returning in".$return_timer."');LS_Name('".$row["firstname"]."');login('".$row["firstname"]."');</script>";
                 $_SESSION['name'] = $row['firstname'];
 
                 $_SESSION['phoneNumber'] = $row['phoneNumber'];
@@ -38,12 +39,12 @@ function LOGIN(){
                 
               
             }
-            else{ echo "Failed to login\nType 14 error: one of these 2 didn't match:... ".$phoneNumber."  ||  ".$pass;}
+            else{ echo '<p class="LS_Box_Text"><b>Failed to login </b> -Type 14 error: </p>';}
 
         }
         else{
-            //+echo "No Matches";
-            echo "Failed to login\nPassword Error: one of these 2 didn't match:... ".$phoneNumber."  ||  ".$pass;
+            echo '<p class="LS_Box_Text"><b>Failed to login </b> <br> Password or Email didn\'t match:... <br>'.$phoneNumber.'  ||  '.$pass;
+            echo "<script> BWEB.tools.appendFixedLogo();</script>";
         }
 }
 LOGIN();
@@ -52,6 +53,7 @@ function RETRN(){
     header('Refresh:3; url='.$GLOBALS["referer"]);
     exit();
 }
-echo "<p> Returning in 3 seconds..</p>";
+echo '<p class="LS_Box_Text"><u> Returning in '.$return_timer.' seconds..<u></p>';
 RETRN();
-?>
+?></body>
+<html>

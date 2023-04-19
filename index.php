@@ -1,5 +1,7 @@
-<script src="https:/www.jackewers.com/JS/KeyFunctions.js" type="text/javascript"><!-- Adds key functions--></script>
-<script src="BloodWeb_Load.js" type="text/javascript"></script>
+<script>document.querySelector('title').addEventListener('change',function(){console.log('CHNAGEXXXXXXXXXXXXXXXXXXXX')})</script>
+
+<!--<script src="https:/www.jackewers.com/JS/KeyFunctions.js" type="text/javascript">  </script>
+--><script src="BloodWeb_Load.js" type="text/javascript"></script>
 
 
 
@@ -11,19 +13,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1">
     <meta name="description" content="BloodWeb.net indexPage">
     <title>BloodWeb.net</title>
+
     <link rel="stylesheet" href="login.css">
-    <link rel="stylesheet" href="Assets.css">
-    <link rel="stylesheet" href="TaskList/Tasklist.css">
     <link rel="stylesheet" href="BloodWeb_Styles.css" type="text/css"> 
     <link rel="shortcut icon" href="i/₿.ico" type="image/x-icon">
     <link href="TaskList/Tasklist.css" rel="stylesheet" type="text/css">
 
 </head>
-
 <?php 
-//include('./PHP/GetUsers.php');
 
+include('./PHP/GetUsers.php');
 ?>
+
 
 <body onload="OL();">  
     
@@ -47,6 +48,8 @@
 </body>
 </html>
 
-<?php
 
+<?php 
+//include('./PHP/GetUsers.php');
 ?>
+

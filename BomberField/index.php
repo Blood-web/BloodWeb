@@ -1,6 +1,8 @@
 
 
 <head>
+    <title>Bomber Field Game </title>
+    <meta name="description" content=" BomberField - A board guessing game. Aquire Bombs, Bomb the field and win prizes!">
     <link rel="stylesheet" href="/login.css" type="text/css" > </link> 
    <link rel="stylesheet" href="styles.css" type="text/css"></link>
 </head>
@@ -12,7 +14,7 @@
 <?php 
 error_reporting(-1);
 
-/*
+
 include('../PHP/GetUsers.php');
 include('../PHP/Get_Game_Logs.php');
 //$referer = $_SERVER['HTTP_REFERER'];
@@ -25,7 +27,6 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
     die; exit;
 }
 
-*/
 ?>
 <input id="NEW_WinSqrs" name="NEW_WinSqrs" hidden/>
 <div id="UPPER_BomberField">

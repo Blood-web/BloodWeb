@@ -1,6 +1,8 @@
 * {box-sizing: border-box}
 
-
+/*Login-Screen*/
+#LS_BODY{background-color:#04AA6D9e; border:min(2.4vw,4.6px) double darkorchid;}
+.LS_Box_Text{max-width:95vw;background-color:#fef;padding: 4%; font-size: min(48px,5.6vw); border:min(5.8px,2vw) ridge #000; text-align: center; display: block; margin: 0 auto;margin-top: 4vh; margin-bottom: 4vh;}
 
 /*///////////////*/
 /* LOGIN */
@@ -10,7 +12,7 @@
 .loggedOUT{background-image: url(/i/BloodW.png); background-position: center; background-repeat: no-repeat; background-size:contain;
 animation: BloodWeb_Move 60s linear 10s infinite forwards; max-height: 80vh; pointer-events:none;
 }
-
+.LoggedIN >h1{-webkit-text-stroke: min(1vw,1px) #afa;}
 @keyframes BloodWeb_Move{
   from{background-position: center;}
   25%{background-position: top;}

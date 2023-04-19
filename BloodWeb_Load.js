@@ -1,4 +1,9 @@
-const BWEB = {
+function ImportScript(url){
+    let script = createElement('script',{'src':url});
+    document.head.appendChild(script);
+}
+document.title.onChange= function(){console.log('title Chnage');}
+ const BWEB = { //₿
     live: true,
     Version: [1.03],//Requires Communal Footer
     BuildTypes: ['XRG', 'CRO', 'NNA', 'LUM'],
@@ -12,13 +17,20 @@ const BWEB = {
         <p>${Usereq}</p>
         <button type="submit" name="${PHPmethod}">YES</button> <button>no</button>
         </div>`);},
-    
+        appendFixedLogo: function(target,size){ if(!target || target==''){target=document.body;} if(!size ||size==''){size='80vw';}
+            createStyleRule('#fiex_BWEb',` display:block; margin: auto; margin-top:1%; margin-bottom:1%; border-radius:50%; max-width:${size}; max-height:${size}; animation:lld 5s linear infinite;border-width: min(14.8px,4.4vw);border-style:ridge; border-color: rgba(216, 112, 147, 0.171);`);
+            createStyleRule('@keyframes lld',"from {transform:rotateY(0deg); -webkit-transform:rotateY(0deg);} 2%{border-color:#FF0000;} 4%{border-color:#FF7F00;}6%{border-color:#00FF00;}8%{border-color:#00FFFF;}10%{border-color:#0000FF;}12%{border-color:#8B00FF;}14%{border-color:#FF00FF;}16%{border-color:#FF1493;}18%{border-color:#FF69B4;}20%{border-color:#FFA500;}22%{border-color:#FFD700;}24%{border-color:#ADFF2F;}26%{border-color:#7CFC00;}28%{border-color:#00FF7F;}30%{border-color:#40E0D0;}32%{border-color:#00BFFF;}34%{border-color:#1E90FF;}36%{border-color:#9370DB;}38%{border-color:#FFC0CB;}40%{border-color:#FFB6C1;}42%{border-color:#FFA07A;}44%{border-color:#FFE4E1;}46%{border-color:#F0E68C;}48%{border-color:#BDB76B;}50%{border-color:#6B8E23;}52%{border-color:#556B2F;}54%{border-color:#2E8B57;}56%{border-color:#008080;}58%{border-color:#4682B4;}60%{border-color:#4B0082;}62%{border-color:#8A2BE2;}64%{border-color:#EE82EE;}66%{border-color:#FFC3A0;}68%{border-color:#FFB347;}70%{border-color:#FFAEB9;}72%{border-color:#FF6961;}74%{border-color:#CD5C5C;}76%{border-color:#F08080;}78%{border-color:#FF7373;}80%{border-color:#FA8072;}82%{border-color:#E9967A;}84%{border-color:#FF8C00;}86%{border-color:#FFA07A;}88%{border-color:#FF4500;}90%{border-color:#FF6347;}92%{border-color:#FFA500;}94%{border-color:#FFD700;}96%{border-color:#DAA520;}98%{border-color:#B8860B;}99.8%{border-color:#EEE8AA;} to {transform:rotatey(1080deg); -webkit-transform:rotateY(1080deg);}");
+        
+            let img=createElement('img',{id:'fiex_BWEB',src:'./i/logo/fiex.png' , alt:'BWEB_Fixed_LOGO'});
+            target.append(img); 
+        },
     },
+    
 
     Nav_Settings: {
-        ToggleNavs:function(ele){ let allNavs = document.querySelectorAll('div[class*="Bloodweb_OpenNav_Section"]');
-            if(!ele || ele==''){for (e in allNavs ){Toggle_Ele_Display(allNavs[e],'none',true);}}
-            else{Toggle_Ele_Display(allNavs[eve],'block');}
+        ToggleNavs:function(el){ let allNavs = document.querySelectorAll('div[class*="Bloodweb_OpenNav_Section"]');
+            if(!el || el==''){for (e in allNavs ){Toggle_Ele_Display(allNavs[e],'none',true);}}
+            else{Toggle_Ele_Display(allNavs[el],'block');}
         },
         Elements: [
             ['Hewers Trust', '/Hewers_Trust/index.php', '/i/Hewers.png'],
@@ -104,6 +116,8 @@ const BattleBoard = {
         }
     }
 }
+
+
 
 function BuildStats() {
     let overlay = createElement('div', { style: 'width:min-content; background-color:#fafafaa5; border:2px double #0a0a0a55;', innerHTML: `<button id="NSS_Switch" onclick="ToggleNerdStats()">StatsForNerds~</button` });
@@ -323,14 +337,16 @@ setTimeout(() => {
         }
         else { console.log('No name in local storage for login') }
     }
-
-    if (!document.title.toLocaleLowerCase().includes('login')) {
+    let MS = document.title&&document.URL;
+    if (!(MS).includes('Login')) {
         if (BWEB.live === false && !document.title.includes('TEST-SYS')) { setTimeout(() => { if (UserSheet.User === 'Jack' || UserSheet.User === 't') { return; } return BloodWeb.tools.DisplayMaintenenceLog(); }, 48); }
         loadLogin();
         BuildStats();
         AUTO_LOGIN(); LoadDefaultNavs();
+        console.log('Not a login page');
     }
-}, 1);
+    else {console.log('Login Page, not appending elements');}
+}, 25);
 
 
  
