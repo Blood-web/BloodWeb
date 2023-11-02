@@ -1,0 +1,25 @@
+{
+  "name": "html",
+  "version": "1.0.0",
+  "description": "NPM TypeScript ",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/Blood-web/BloodWeb.git"
+  },
+  "author": "BloodWeb.net",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Blood-web/BloodWeb/issues"
+  },
+  "homepage": "https://github.com/Blood-web/BloodWeb#readme",
+  "devDependencies": {
+    "typescript": "^5.1.3"
+  }
+}
