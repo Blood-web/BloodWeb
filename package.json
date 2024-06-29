@@ -9,10 +9,6 @@
   "scripts": {
     "test": "test"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://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@github.com/Blood-web/BloodWeb.git"
-  },
   "author": "BloodWeb.net",
   "license": "ISC",
   "bugs": {
