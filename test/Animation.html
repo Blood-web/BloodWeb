@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <style>
+            dialog,img{
+               width:80vw;
+            }
+            option,input,button{font-size: large;}
+            form{display:flex; align-items: center; justify-content: space-evenly;}
+            input{width:min(60vw,25rem);}
+        </style>
+    </head>
+    <body>
+        <dialog>
+            <h1> BloodWeb Animation TestBox </h1>
+            <video autoplay loop muted style="width:100%;">
+            <source id="FD_Video" src="http://www.bloodweb.net/Animation.mp4" type="video/mp4" />
+            Browser does not support video
+            </video>
+            <div>
+                <h2>Add New Video Url</h2>
+                <input id="NFD" type="text" placeholder="http://www.google.com/Cat_Video1.mp4"/> 
+                <button onclick="TestswapVideo()">Test URL</button>
+            </div>
+        </dialog>
+    </body>
+    <script type="text/javascript">document.querySelector('dialog').showModal();
+    const TestswapVideo=function(){
+        let FD=document.querySelector('#FD_Video');
+        let N=document.querySelector('#NFD');
+        FD.type="video/"+N.value.split(".").pop();
+        FD.src=N.value;
+    }
+    </script>
+</html>

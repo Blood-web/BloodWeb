@@ -1,0 +1,31 @@
+*{margin:0 auto;  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);}
+h1{text-align:center; font-size:10vw; -webkit-text-stroke: min(2px,.1vw) #fffafa9f;}
+h2[id="BB_WinInfo"]{display:flex; justify-content: space-between; align-items: center; padding:3% .4%;}
+h2[id="BB_WinInfo"]>#BB_LastWin,h2[id="BB_WinInfo"]>#BB_WinsLeft{ font-size: min(18px,6vw);}
+h6{font-size:4vw; text-align:center; border:3px double red;}
+body{background:seagreen; padding:1%; font-size:4vw;} 
+
+#UPPER_BomberField{display:flex; justify-content:center; align-items:space-evenly;}
+#UPPER_BomberField>*{ background-color:#0000af55;}
+#UPPER_BomberField>*>button>p{ font-size:min(6vw,32px);}
+#LOG{margin-left:3%;} #BomberField_Rules{margin-right:3%;}
+#Log_Report,#Rule_Field{ overflow:scroll; position:absolute; background-color: lightblue; height:min(max(100vw,60vh),500px); width:min(50vw,500px);    }
+#Log_Report{left:0;}#Rule_Field{right:0;}
+#Log_Report>p,#Rule_Field>p{margin:0 auto; text-align:center; margin-bottom:1.8%; font-weight:600;}
+/**/
+
+
+#BomberField_Field{display:flex; flex-wrap:wrap; padding:1vh 0; justify-content:center; align-items:center; margin-bottom:1vh; border:min(4px,.1vw) double #faf;} 
+#BomberField_Field>[id^="BS_Square"]{width:12%;height:12vw ; text-align:center; border-width:min(1vw,2px); border-style:solid; margin:0;  background-color:#030;} 
+#BomberField_UX{display:flex; justify-content:space-between; align-items:center; font-size:min(5vw,32px); text-align:center;}
+#BomberField_UX>*{display:inline-block; width:30%; margin:0; font-size:inherit;}
+#BomberField_UX>*:not(#Add_Bomb){background:repeating-radial-gradient(ellipse AT bottom, #fafafa, #faf,#f9f9f9,#fafafa,#eaeaea);}
+#BomberField_UX>span>p>p{font-size:xx-small;}
+#Add_Bomb{border: 1px double black; background-color:#faf; display:block; margin:0 auto; font-size:min(6.8vw,28px); width:38%; -webkit-text-stroke:min(.2vw,4px) green;}
+#Add_Bomb::first-line{font-size:min(7.2vw,42px); }
+#Add_Bomb:disabled{color:red;}
+*[id^="BS_Square"]{}
+*[id^="BS_Square"]:not(.HIT):not(.FBS):not(.MJW):not(.MnW)::before{content:"-1💣"; display:block; border-color:blue; font-size:min(24px,8vw);}
+.HIT,.FBS,.MJW,.MnW{ border-color:red; }
+.HIT::before{color: #faf; --webkit-text-stroke:2px red; content:'X'; font-size:10vw; display:block; user-select:none; background-color:black; margin:0 auto; height:max-content;}
+.FBS::before{color:green; content:'+1💣';}

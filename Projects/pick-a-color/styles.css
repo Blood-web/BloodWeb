@@ -1,0 +1,126 @@
+/* Styles for the main elements */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 2em;
+}
+
+#title { /* Styling for the h1 */
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-align: center;
+}
+
+.grid-container {
+    display: grid;
+    width: calc(100% - 20px); /* Adjust width to account for padding */
+    grid-template-columns: repeat(auto-fit, minmax(calc(100%/5.2 - 10px), 1fr));
+    gap: 10px;
+    overflow-x: auto;
+    padding: 1vh 10px; /* Added 10px padding to the left and right sides */
+    margin-bottom: 1em; /* Push below content */
+}
+
+
+.rectangle {
+    position: relative;
+    width: 100%; /* Adjusted by grid-template-columns */
+    height:min(20vw,20vh);
+    padding-top: 20%; /* Adjust this value based on the desired aspect ratio */
+    background-color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: min(4vw,12px);
+    box-sizing: border-box;
+}
+
+.lock-icon {
+    position: absolute;
+    top:0;
+    font-size: 20px;
+}
+#refreshButton {
+    background-color: #007bff; /* Blue color for visibility */
+    color: white; /* White text for contrast */
+    padding: 10px 20px; /* Adequate padding for a larger click area */
+    font-size: 16px; /* Slightly larger font size for readability */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners for a modern look */
+    cursor: pointer; /* Cursor changes to pointer to indicate it's clickable */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+#refreshButton:hover {
+    background-color: #0056b3; /* Darker shade of blue on hover for feedback */
+}
+
+.rectangle.locked {
+    border: 2px solid #000;
+}
+.settingsBox {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Adjust the gap between elements as needed */
+    flex-wrap: wrap; /* Ensures responsiveness */
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 300px;
+    margin: 20px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.settingsBox h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.rainbow-text {
+    font-size: 24px;
+    background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.locked-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    /* font-size: 16px;  */
+    /* Adjust font size as needed */
+}
+.settingsBox label {
+    display: block;
+    margin: 5px 0;
+}
+
+.settingsBox .basic-settings label,
+.settingsBox .advanced-settings label {
+    margin-left: 10px;
+}
+
+.settingsBox .advanced-settings {
+    margin-top: 10px;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
+.settingsBox > * {margin-left:0; text-align:left;}

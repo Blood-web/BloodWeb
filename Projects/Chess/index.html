@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Chess</title>
+
+    <link rel="stylesheet" href="../../BusinessCard/CSS/styles.css">
+
+    <style>
+
+        #ChessBoard {
+            display: flex;  flex-wrap: wrap; padding: 2%;
+            width: 90vw; height: max-content;
+            margin: 0 auto; justify-content: center; align-items: center;
+            border: 2px solid black;
+        }
+        
+        .blackSquare{
+            background-color: #0f0f9f55;
+        }
+        .whiteSquare{
+            background-color: #f0ffff55;
+        }
+
+        .ChessUnit {
+            width: 10vw; min-width: 9%;
+            height:10vw;
+            text-align: center; font-size: 2.6rem;
+            display: flex;  justify-content: center; align-items: center;
+            border: 1px solid black;
+            vertical-align: center;
+            background-position: center; background-repeat: no-repeat; background-size: contain;
+        }
+        .ChessUnit[value^='W/']{
+            color: black;
+            -webkit-text-stroke: .03rem green ;
+        }
+        .ChessUnit[value^='B/']{
+            color: black;
+            -webkit-text-stroke: .03rem red;
+            
+        }
+        .ChessUnit:hover{transform: scale(1.13); background-color: aquamarine;}
+        
+        .ChessUnit.Preview{
+           
+            color: blue;
+        }
+        
+    </style>
+</head>
+<body>
+    
+<p>Chess <br>♙8, ♘2, ♗2, ♖,2 ♕,1 ♔,1 :: White<br>♟8, ♞2, ♝2, ♜,2 ♛,1 ♚,1 :: Black </p>
+
+<div id="ChessBoard">
+    
+</div>
+
+    <button onclick="LoadBoard('New')">Reset Board</button>
+
+<script src="../../BusinessCard/JS/KeyFunctions.js"></script>
+<script src="chess.js" type="text/javascript"></script>
+</body>
+</html>

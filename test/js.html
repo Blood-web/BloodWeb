@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> *{text-align:center;} </style>
+  <title>JavaScript Code Runner</title>
+
+<script type="text/javascript" src="../../KeyFunctions.js"></script>
+q<script type="text/javascript" src="../../BloodWeb_Load.js"></script>
+
+  <script type="text/javascript">
+    function runCode() {
+      var code = document.getElementById("codeInput").value;
+      var resultElement = document.getElementById("result");
+      resultElement.textContent = ""; // Clear previous results
+      
+      try {
+        var result = eval(code);
+        resultElement.textContent = String(result);
+      } catch (error) {
+        resultElement.textContent = "Error: " + error.message;
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>JavaScript Code Runner</h1>
+  
+  <h2>Enter your JavaScript code below:</h2>
+  <textarea id="codeInput" rows="10" cols="50" placeholder="Enter JavaScript code"></textarea>
+  <br>
+  <button onclick="runCode()">Run Code</button>
+  
+  <h2>Result:</h2>
+  <div id="result"></div>
+</body>
+
+</html>

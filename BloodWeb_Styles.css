@@ -1,0 +1,816 @@
+:root {
+  --border_1: min(8px, 2vw) solid #600080cf;
+  --border_1_DBL: min(8px, 2vw) double #600080cf;
+  --scale_font_xsml:min(12px, 2.4vw);
+  --scale_font_med:min(22px, 4.2vw);
+  --scale_font_xlrg:min(24px, 5.5vw);
+  --light-color_main: #facfca;
+  --light-color_bg:#afacfa;
+  --dark-color_main: #1a090a;
+  --dark-color_bg:#130113;
+  --side-margin_1:min(8.8px,1.8vw);
+  --padding_1:min(0.2vh,4px) min(0.6vw,12px);
+  --radial-background_1: repeating-linear-gradient(60deg, #ff000060, rgba(255, 0, 0, 0.383), rgba(255, 0, 0, 0.478), #ff000060, rgba(255, 111, 0, 0.369));
+}
+
+/* For Assistive technologies*/
+*>*::first-letter,.upperCase{text-transform: uppercase;}
+
+/*Universal Styles*/
+a,
+button,
+input[type="submit"] {
+  cursor: pointer;
+}
+.MP0{margin:0;padding:0;}
+
+/*SPECIAL*/
+.Shimmer {
+  display: inline-block;
+  -webkit-mask: linear-gradient(60deg, #000 30%, #0005, #000 70%) right/300% 100%;
+  background-repeat: no-repeat;
+  animation: Shimmer 12.5s ease 5s 2.5;
+}
+@keyframes Shimmer {
+  0%,99.8% {opacity: 1; -webkit-mask-position: none;}
+  99.9% {-webkit-mask-position: left;}
+  100% {-webkit-mask-position: none;}
+}
+.keyword-overlay {
+  position: absolute;
+  opacity: 0.5; /* Set the desired opacity value */
+  color: white; /* Set the text color */
+  font-size: 12px; /* Set the font size */
+  font-weight: bold; /* Set the font weight */
+  pointer-events: none; /* Ensure the keywords don't interfere with user interaction */
+}
+
+/*Font Grouping*/
+
+#Header_Title {
+  font-size: var(--scale_font_xlrg);
+}
+
+#Title_Motto,
+#Header_Title i{
+  font-size: var(--scale_font_xsml);
+}
+
+/*DOM*/
+
+html {
+  min-height: 140vh;
+  border: 1px double #000;
+}
+
+body {
+    background-color: var(--light-color_bg);
+ /* background-color: white;*/
+  color:#000;
+  max-width: 600px;
+  margin: 0 auto;
+}
+body.dark-mode{
+  color:#afafaf;
+  background-color: var(--dark-color_bg);
+}
+
+header {
+  text-align: center;
+  position: sticky;
+  top: 0;
+  text-align:center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--light-color_main);
+  border-top: var(--border_1);
+  border-bottom: var(--border_1_DBL);
+  border-left: var(--border_1_DBL);
+  border-right: var(--border_1_DBL);
+}
+header.dark-mode{
+  background-color: var(--dark-color_main);
+  border-top: var(--border_1);
+  border-bottom: var(--border_1_DBL);
+  border-left: var(--border_1_DBL);
+  border-right: var(--border_1_DBL);
+}
+
+
+
+
+main {
+  display: flex;
+  padding: 4% 0;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  background: var(--radial-background_1);
+  border: 6px double gold;
+  user-select: none;
+  min-height: 80vh;
+}
+
+
+.FFW {
+  text-align: center;
+  font-size: min(4vw, 4vh);
+  height: min(33vw, 20vh);
+  width: min(8rem, 30vw);
+  margin: 2%;
+  padding-bottom: 0vh;
+  border: 2px solid black;
+  background-color: #80808055;
+  background-position-x: center;
+  background-position-y: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+
+.FFW::first-line {
+  background-color: antiquewhite;
+  position: absolute;
+  top: -8vh;
+}
+
+
+
+/*HEAD && NAV && Footer*/
+
+#Header_Title {
+  margin-left: min(10px, 4vw);
+  -webkit-text-stroke: min(.68px, .1vw) crimson;
+  padding: min(3.5px, .5%) min(8px, 2%);
+  background-color: #afafaf55;
+  border: 2px solid #fafafa55;
+}
+
+#Perma_NavHome>img {
+  height: min(38px, 7.45vw);
+  width: min(7.45vw, 38px);
+  vertical-align: middle;
+  margin-right: min(1.2vw, 4.8px);
+  animation: mainRotate 1.2s ease 5s infinite forwards;
+}
+
+#Header_Title i {
+  -webkit-text-stroke: min(1px, .1vw) blue;
+}
+
+
+
+/* SWITCHES */
+button.BloodWeb_NavSwitch {
+  text-align: center;
+  height: min(5vh,32px);
+  font-size:large;
+  margin:0 var(--side-margin_1);
+  color: purple;
+  -webkit-text-stroke: min(1.8px, 0.1rem) #0000003a;
+  background-color: aliceblue;
+}
+.BloodWeb_NavSwitch::-moz-focus-inner{padding:0; border:0;} 
+#NTO_SubHeader{ margin:0 auto; margin-right:min(8.6px,1vw); }
+
+#NTO_BWEB_OpenNav{ margin-right: 1%; }
+
+#Sub_Header{flex-basis: 100%; padding:var(--padding_1);}
+
+#Sub_Header_SubSection{
+  background-color: #fafafa55; width:100%;
+}
+
+#Login_Control {
+  background-color: #fafafa55;
+  margin: 0 auto; margin-right:0%;
+  width:fit-content;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding:0.2vh 2.4vw;
+}
+#Login_Control>#User_Name{text-decoration: underline;}
+#LC_Controls_Wrapper {
+  background-color: rgba(127, 255, 212, 0.233);
+  border: 1px double green;
+  text-align: left;
+  display: inline-flex;
+  width:min(40%,fit-content);
+  margin:0;
+}
+
+#LC_Controls_Wrapper>* {
+  display: inline;
+  vertical-align: middle;
+  font-size: min(24px, .42rem);
+}
+
+.Portal_Submit,
+#LC_Controls_Wrapper>button {
+  background-color: #04AA6D95;
+  max-width: 40%;
+  min-width: fit-content;
+  min-height: 1.4pc;
+  font-size: var(--scale_font_med);
+}
+
+#Login_Switch,#Logout_Switch,#Signup_Switch{
+  margin:0.2% var(--side-margin_1);
+}
+#SignUp_Switch {
+  float: right;
+}
+
+#User_Name {
+  margin: 0 auto;
+  margin-right:1%;
+  text-align: center;
+  vertical-align: middle;
+  padding: 1% 4% 1% 0%;
+}
+
+.Portal_Submit{
+  margin: 1%;
+}
+
+#BloodWeb_Nav {
+  position: sticky;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 0.75% 1.25%;
+  margin-bottom: 0.64vh;
+  top: 0;
+  border: var(--border_1);
+}
+
+.Selected_Switch {
+  color: gray;
+  border: min(2.4px, 1vw) solid #0a0a0a1a;
+  opacity: 0.8;
+}
+
+
+#BloodWeb_Nav>span {
+  height: min-content;
+}
+
+#BloodWeb_OpenNav {
+  padding: 4%;
+}
+
+#BloodWeb_OpenNav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  width: min(68vw, 450px);
+  height: 100vh;
+  background-color: #3fa3fae9;
+  border: 2px double #0000eaff;
+  margin-top: 0.4%;
+  padding: 2%;
+}
+
+#BloodWeb_OpenNav>* {
+  background-color: #fdf;
+}
+
+#BloodWeb_OpenNav>*:not(#Bloodweb_OpenNav_Title) {
+  background-color: #faaadf;
+}
+
+#Bloodweb_OpenNav_Title {
+  height: min(60px, 8vh);
+  display: flex;
+  flex-wrap: no-wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.4vh;
+  border: min(4px, 3vw) double #020202;
+}
+
+div[class*="Bloodweb_OpenNav_Section"]>* {
+  padding: 1.2%;
+}
+
+#BloodWeb_OpenNav>*:not(#Bloodweb_OpenNav_Title),
+span[class*="Bloodweb_NavSelections"] {
+  border: 4px double gray;
+}
+
+div[class*="Bloodweb_OpenNav_Section"]:has(> span)>p::after {
+  content: "▼";
+  float: right;
+}
+
+div[class*="Bloodweb_OpenNav_Section"] {
+  margin-top: min(10px, 1vh);
+  border: 2px solid #0000006a;
+}
+
+span[class*="Bloodweb_NavSelections"] {
+  padding: 0;
+  margin-bottom: 0;
+}
+
+span[class*="Bloodweb_NavSelections"]>p>a {
+  margin: 0 auto;
+  padding: 8%;
+  border: 1px solid gray;
+  color: blue;
+  text-decoration: underline;
+  display: block;
+}
+
+#Close_OpenNav {
+  font-size: x-large;
+  width: min-content;
+  border: 1px solid #0000008a;
+  padding: 0 2%;
+  opacity: 0.75;
+  margin-left: auto;
+}
+
+/*User Nav*/
+
+
+
+/* ALL LOGIN KEYS */
+
+* {
+  box-sizing: border-box
+}
+
+/*Login-Screen*/
+#LS_BODY {
+  background-color: #04AA6D9e;
+  border: min(2.4vw, 4.6px) double darkorchid;
+}
+
+.LS_Box_Text {
+  max-width: 95vw;
+  background-color: #fef;
+  padding: 4%;
+  font-size: min(48px, 5.6vw);
+  border: min(5.8px, 2vw) ridge #000;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  margin-top: 4vh;
+  margin-bottom: 4vh;
+}
+
+/*///////////////*/
+/* LOGIN */
+
+/* Non logged in elements*/
+.loggedIN {
+  background: var(--radial-background_1);
+}
+
+.loggedOUT {
+  background-image: url(/i/BloodWeb/BloodWeb_basic.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  animation: BloodWeb_Move 60s linear 10s infinite forwards;
+  max-height: 80vh;
+  pointer-events: none;
+}
+
+.LoggedIN>h1 {
+  -webkit-text-stroke: min(1vw, 1px) #afa;
+}
+
+@keyframes BloodWeb_Move {
+  from {
+    background-position: center;
+  }
+
+  25% {
+    background-position: top;
+  }
+
+  50% {
+    background-position: center;
+  }
+
+  75% {
+    background-position: bottom;
+  }
+
+  to {
+    background-position: center;
+  }
+}
+
+.loggedOUT>*:not(#Login_Switch) {
+  opacity: 0;
+  user-select: none;
+}
+
+.loggedOUT>#Login_Switch {
+  animation: alert_Login 2.5s linear forwards infinite;
+}
+
+@keyframes alert_Login {
+
+  from,
+  10% {
+    transform: scale(1.2);
+  }
+
+  to {}
+}
+
+
+
+#Login_Modal {
+  z-index: 5;
+}
+
+/* Full-width input fields */
+.container>input[type=email],
+.container>input[type=text],
+.container>input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* Add a background color when the inputs get focus */
+input[type=email]:focus,
+input[type=text]:focus,
+input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.container>button {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Set a style for all buttons */
+.container>button,
+#SignUp_Switch {
+  width: min(100%, 40vw);
+}
+
+.Portal_Submit,
+.container>button,
+#SignUp_Switch,
+#Login_Switch,
+#Logout_Switch {
+  color: white;
+  padding: min(1.2vw, 14px) min(1.5vw, 20px);
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity: 1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+
+
+/* Add padding to container elements */
+.container {
+  z-index: 3;
+  padding: min(14px, 4vh);
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: #474e5d;
+  padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto;
+  /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%;
+  /* Could be more or less, depending on screen size */
+}
+
+.imgcontainer {
+  width:100%;
+  padding: 0% 6%;
+  background-color: #80008055;
+  border: 2.5px double #f1f1f1;
+}
+
+.imgcontainer>* {
+  display: inline-block;
+  font-size: min(4.8vw, 18px);
+}
+
+.imgcontainer>img {
+  border-radius: 40%;
+  padding: 1%;
+  background-color: #ddd;
+  width: min(6.8vw, 30px);
+  height: min(6.8vw, 30px);
+  margin-right: 3%;
+  vertical-align: middle;
+}
+
+/* Style the horizontal ruler */
+
+.psw {
+  display: inline-block;
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Animation IMG*/
+dialog:has(#fiex_BWEB)::backdrop {
+   background: #fa1fa1; 
+  backdrop-filter:blur(3px);
+}
+
+dialog:has(#fiex_BWEB)>* {
+  text-align: center;
+}
+
+#fiex_BWEB {
+  transform: scale(0);
+  -webkit-transform: scale(0);
+  display: block;
+  margin: auto;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  border-radius: 50%;
+  animation: lld 5s linear infinite;
+  border-width: min(14.8px, 4.4vw);
+  border-style: ridge;
+  border-color: rgba(216, 112, 147, 0.171);
+}
+
+@keyframes lld {
+  from {
+    transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+  }
+
+  2% {
+    border-color: #FF0000;
+  }
+
+  4% {
+    border-color: #FF7F00;
+  }
+
+  6% {
+    border-color: #00FF00;
+  }
+
+  8% {
+    border-color: #00FFFF;
+  }
+
+  10% {
+    border-color: #0000FF;
+  }
+
+  12% {
+    border-color: #8B00FF;
+  }
+
+  14% {
+    border-color: #FF00FF;
+  }
+
+  16% {
+    border-color: #FF1493;
+  }
+
+  18% {
+    border-color: #FF69B4;
+  }
+
+  20% {
+    border-color: #FFA500;
+  }
+
+  22% {
+    border-color: #FFD700;
+  }
+
+  24% {
+    border-color: #ADFF2F;
+  }
+
+  26% {
+    border-color: #7CFC00;
+  }
+
+  28% {
+    border-color: #00FF7F;
+  }
+
+  30% {
+    border-color: #40E0D0;
+  }
+
+  32% {
+    border-color: #00BFFF;
+  }
+
+  34% {
+    border-color: #1E90FF;
+  }
+
+  36% {
+    border-color: #9370DB;
+  }
+
+  38% {
+    border-color: #FFC0CB;
+  }
+
+  40% {
+    border-color: #FFB6C1;
+  }
+
+  42% {
+    border-color: #FFA07A;
+  }
+
+  44% {
+    border-color: #FFE4E1;
+  }
+
+  46% {
+    border-color: #F0E68C;
+  }
+
+  48% {
+    border-color: #BDB76B;
+  }
+
+  50% {
+    border-color: #6B8E23;
+  }
+
+  52% {
+    border-color: #556B2F;
+  }
+
+  54% {
+    border-color: #2E8B57;
+  }
+
+  56% {
+    border-color: #008080;
+  }
+
+  58% {
+    border-color: #4682B4;
+  }
+
+  60% {
+    border-color: #4B0082;
+  }
+
+  62% {
+    border-color: #8A2BE2;
+  }
+
+  64% {
+    border-color: #EE82EE;
+  }
+
+  66% {
+    border-color: #FFC3A0;
+  }
+
+  68% {
+    border-color: #FFB347;
+  }
+
+  70% {
+    border-color: #FFAEB9;
+  }
+
+  72% {
+    border-color: #FF6961;
+  }
+
+  74% {
+    border-color: #CD5C5C;
+  }
+
+  76% {
+    border-color: #F08080;
+  }
+
+  78% {
+    border-color: #FF7373;
+  }
+
+  80% {
+    border-color: #FA8072;
+  }
+
+  82% {
+    border-color: #E9967A;
+  }
+
+  84% {
+    border-color: #FF8C00;
+  }
+
+  86% {
+    border-color: #FFA07A;
+  }
+
+  88% {
+    border-color: #FF4500;
+  }
+
+  90% {
+    border-color: #FF6347;
+  }
+
+  92% {
+    border-color: #FFA500;
+  }
+
+  94% {
+    border-color: #FFD700;
+  }
+
+  96% {
+    border-color: #DAA520;
+  }
+
+  98% {
+    border-color: #B8860B;
+  }
+
+  99.8% {
+    border-color: #EEE8AA;
+  }
+
+  to {
+    transform: rotatey(1080deg);
+    -webkit-transform: rotateY(1080deg);
+  }
+}

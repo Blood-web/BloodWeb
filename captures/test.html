@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SSE Example</title>
+</head>
+<body>
+  <h1>Server-Sent Events Example</h1>
+  <p>Editting this page, LIVE</p>
+  <div id="sse-data"></div>
+
+  <script>
+    const ws = new WebSocket('ws://www.bloodweb.net/captures/websocket');
+
+//  const ws = new WebSocket('ws://localhost/captures/websocket');
+
+ws.addEventListener('message', (event) => {
+  if (event.data === 'reload') {
+    // Reload the page
+    location.reload();
+  }
+});
+  </script>
+</body>
+</html>
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <link rel="stylesheet" type="text/css" href="Image_slider.css"></link> 
+
+    
+</head>
+<body>
+    <h1><img src="../favicon.ico" alt="BwebLogo">Bloodwex-<p>Pi</p>Slide</h1>
+    <div id="slide_main" class="Standard_slider">
+        
+        <a class="prev" >&#10094;</a>
+        <a class="next" >&#10095;</a>
+   
+        
+        <div id="slider_subsection">
+
+            <div class="captiontext">
+                <p id="caption_insert"> Sample_text</p>
+            </div>
+
+            <div id="slider_settings">     
+                <div style="text-align: center;" id="slider_dot_div"></div>
+                <span style=" display: flex; justify-content: space-evenly;">
+                    <button id="Slider_dots" class="slider_settings" onclick="toggle_slider_settings(this)">Slider_Dots:ON</button>
+                    <button id="Captions" class="slider_settings" onclick="toggle_slider_settings(this)">Captions:ON</button>
+                    <button id="Img_count" class="slider_settings" onclick="toggle_slider_settings(this)">Img_Counter:ON</button>
+                </span>
+            </div>
+
+        </div>
+        
+    </div> 
+   
+    
+    <script type="text/javascript" src="../KeyFunctions.js"></script>
+    <script type="text/javascript" src="slider.js"></script>
+    <script type="text/javascript">
+        // Oldest >> Newest 
+      build_slider([ {caption:"latest and Greatest"}, {caption:"on bus x13"},{caption:"Iconic Capture x12"},{caption:"More than a Idyllic Experience x11"},{caption:"Mesmerizing Scene x10"},{caption:"Thinking about Chicken nugs x9"},{caption:"Picturesque Capture x8"},{caption:"Beauty incarnate x7"},{caption:"Beauty incarnate x6"},{caption:"Awe-inspiring Memory x5"},{caption:"Vibrant Picture x4"},{caption:"My webmaster, Your webmaster.. The BLOODWEB x3"},{caption:"Accidentally wiped my harddrive after taking this pic... x2"},{caption:"WE ARE LIVE BABY ~ x1"}]);
+    </script>
+
+<script>
+  const socket = new WebSocket('ws://localhost:3000'); // Connect to the Node.js server
+  socket.onmessage = function (event) {
+    if (event.data === 'reload') {
+      location.reload(); // Reload the page
+    }
+  };
+</script>
+
+</body>
+</html>
+-->

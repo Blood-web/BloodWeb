@@ -1,0 +1,536 @@
+:root {
+  --DT-COLOR: red, #fff, #aaa, purple, purple, #000, purple, #f00, #f00, #f00,
+    #f00, #f00, #f00, #f00, #f00, #f00, #f00, #f00, #f00, #f00, #f00, #f00, #f00,
+    #f00, #f00, #f00, #f00, #f00, #f00;
+}
+@media only screen and (max-width: 400px) {
+  /* EXTRA SMAll Phones*/
+  html {
+    background: linear-gradient(140deg, red, black);
+  }
+  #TaskList_Overlay {
+    top: 0.2%;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 101vh;
+  }
+  #Tasks_Container {
+    max-height: 50vh;
+  }
+  #Task-Conf {
+    max-width: 98vw;
+  }
+}
+
+@media only screen and (min-width: 400px) {
+  /* Potrait Tablets and small phones*/
+  html {
+    background-color: #00f;
+  }
+  #TaskList_Overlay {
+    bottom: 1%;
+    left: 1%;
+    width: min(84vw, 48vh);
+  }
+  #Tasks_Container {
+    max-height: 30vh;
+  }
+  #Task-Conf {
+    max-width: 80vw;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  /*Laptops, Vert Tablets and larger*/
+  html {
+    background-color: #0f0;
+  }
+  #TaskList_Overlay {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    min-height: 100vh;
+  }
+  #TaskList_Overlay > * {
+    max-width: 50%;
+  }
+  #Task-Conf {
+    max-width: 48vw;
+  }
+}
+
+#TaskList_Overlay {
+  margin: 0 auto;
+  display: flex;
+  background-color: #f00;
+  border: 1px double #000;
+  z-index: 2;
+  position: fixed;
+  padding: 0.8%;
+  padding-top: 2vh;
+  margin-top: -1vh;
+}
+
+#TaskList_Wrapper {
+  background-color: #fff;
+  border: 1.4vw double saddlebrown;
+  margin: 0 auto;
+  width: 98%;
+  padding: 0.6% 1% 2% 1%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  color: #000;
+}
+#TaskList {
+  background-color: #4f4d4e77;
+  padding-top: 0.4vh;
+  margin-top: 1vh;
+}
+
+#TaskList_AppName {
+  display: inline-block;
+  margin: 0 auto;
+  width: fit-content;
+  text-align: left;
+  -webkit-text-stroke: 0.2vmin brown;
+  font-style: italic;
+  font-weight: 900;
+  color: green;
+  font-size: min(2rem, 9vw);
+}
+#Task-Title {
+  display: block;
+  width: 100%;
+  background-color: #deb88755;
+  width: 100%;
+  text-align: center;
+  -webkit-text-stroke: 0.2vmin brown;
+  font-style: italic;
+  font-weight: 900;
+  color: green;
+  font-size: min(2rem, 9vw);
+  overflow: -moz-hidden-unscrollable;
+}
+#Task-Title > * {
+  display: inline-block;
+}
+#Tasklist_Timeblock_div {
+  padding: 2%;
+  float: right;
+}
+.Time_Block_Keys {
+  margin-right: 0;
+}
+
+#Tasklist_Projects_div {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 0.4vh 0.8vw 0.4vh 0.8vw;
+  background-color: purple; border: 2px dashed #8af8af;  
+}
+#ProjectSelector {
+  margin: 0 auto;
+  font-size: min(1.8rem, 7vw);
+  margin-right: 0;
+}
+#Tasklist_EditProjectName_Button{
+  font-size: min(1.5rem, 5vw); margin-left: .2%;
+}
+.Task_Keys {
+  background-color: white;
+  border: 0.1rem double black;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  text-align: center;
+  font-weight: bold;
+  -webkit-text-stroke: 0.04rem #00000000;
+}
+.Task_Keys:not(.Time_Block_Keys, #Tasklist_EditProjectName_Button) {
+   font-size: min(1.8rem, 6vw);
+  color: red;
+ margin: .2%;
+}
+.Task_Keys:not(.Time_Block_Keys):nth-child(2) {color: #000;}
+
+#Tasklist_NewProject_Div{  display:flex;
+  padding: 0.4vh 0 0.4vh 0;
+  background-color: #00ffff;border: 2px solid green;}
+#Tasklist_NewProject_Div>*{font-size: min(1.6rem, 5.4vw); 
+   }
+#Tasklist_NewProject_Check{margin-right: 0;}
+#Tasklist_NewProject_Input{margin-left: 1%;}
+
+  #Utility_Form {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1%;
+  padding: 1.2% 0%;
+  border: 2px solid #000;
+  font-size: min(1.2rem, 6vw);
+  overflow: -moz-hidden-unscrollable;
+}
+
+#AddTask_Table {
+  color:#020 ;
+  background-color: #00ffff; font-weight: 600; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  padding-top: 1%;
+  max-height: 16vh; max-width: 100%;
+  overflow: scroll;
+  display: flex; flex-wrap: wrap;
+}
+
+#AddTask_Table >tr>td{margin: 0 auto; border: 4px double dodgerblue; }
+.Task-Add-Rows{background-color: #00ff0055;display: flex; justify-items: center; width: 100%;}
+
+#AddNewTaskTR{
+  display: block; margin: 0 auto;  
+}
+#AddNewTaskTR>.Task_Keys{background-color: #00f;
+color:#000; -webkit-text-stroke: 2px red;
+}
+/* Add task Pushed */
+#Task-Add-Span {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0.1%;
+  margin-top: 2%;
+  padding-bottom: 2%;
+  background-color: #00ffff55;
+}
+#Task-Add-Span > * {
+  display: inline-block;
+}
+.Task_Inputs {
+  color: #000;
+  text-align: center;
+  font-size: min(1.28rem, 8.5vw);
+}
+#Task_to_Add {display: block; margin: 0 auto;
+  max-width: 90%;
+}
+.addPriority {display: block; margin: 0 auto;
+  max-width: 10vw;
+}
+
+/* Prioirity arrows*/
+#Task-Conf > input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  border: 0;
+}
+
+.Task_Switches {
+  /* All Task Buttons*/
+  cursor: pointer;
+  margin: 0 auto;
+  border: 0.07rem solid yellowgreen;
+  font-size: min(4.5vw, 0.9rem);
+  -webkit-text-stroke: 0.01rem black;
+}
+
+.Task_Keys:hover {
+  cursor: pointer;
+  transform: scale(1.234);
+  -webkit-text-stroke: 0.04rem black;
+}
+
+#Close-Task-List {
+  margin-right: 0;
+}
+#Refresh_Task_List {
+  margin-left: 0;
+}
+
+#task_Priority_Wrap {
+  margin: 0 auto;
+  display: flex;
+  width: min-content;
+  flex-direction: column;
+  background-color: aliceblue;
+  justify-content: center;
+}
+
+.Tasks_Priority_tog {
+  cursor: pointer;
+  padding-bottom: 0;
+  text-align: left;
+  font-size: 1.6rem;
+  border: 1px solid black;
+}
+
+#Utility_Form .Task_Switches:hover:not(.Tasks_Priority_tog) {
+  transform: scale(1.123);
+  border-color: lightblue;
+}
+.Tasks_Priority_tog:hover {
+  transform: scale(2);
+  background-color: #ff0000dd;
+  color: white;
+}
+#add_switch[value="Add Task"] {background-color: dodgerblue;}
+#add_switch[value="INSERT"]{background-color: #0f0;}
+
+#del_switch {
+  background-color: brown;
+}
+
+#Tasks_Container {
+  position: relative;
+  overflow-y: scroll;
+  overflow-x: visible !important;
+}
+
+.Task-List-Item { /*.Priority*/
+  display: flex;
+  word-wrap: break-word;
+  border: .42rem double;
+  padding: 0.6% 0;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  font-size: min(1.25rem, 8vw);
+  color: #000;
+  font-weight: 600;
+  background-color: #90ee9055;
+}
+.Task-List-Item:hover {
+  cursor: pointer;
+  transform: scale(1.0014);
+  font-weight: 700;
+  background-color: aliceblue;
+}
+
+.Task-List-Item > input {
+  margin-left: 1%;
+  margin-right: 1%;
+  vertical-align: middle;
+  accent-color: #000;
+}
+.Task-List-Item > p {
+  margin: 0 auto;
+  text-align: left;
+  margin-top: auto;
+  margin-bottom: auto;
+  background-color: #affaaf55;
+  width: 92%;
+}
+.task_fav_icon { cursor: pointer;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 1%;
+  padding: 0.2%;
+  height: min-content;
+  border: none;
+  background: none; 
+  color: #00000000;
+  background-image: url(i/F0.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  animation: FireRotation 2.5s cubic-bezier(0.075, 0.82, 0.165, 1), 1s, infinite forwards forwards;
+}
+
+.task_fav_icon[value="0"] {
+  color: gray; -webkit-text-stroke: 0.02rem #000;
+  opacity: 0.8;
+  border: 4px double gray;
+}
+.task_fav_icon[value="0"]::before{content:'★';}
+.task_fav_icon[value="1"]::before{content: '★'; 
+  color: goldenrod;
+  background: repeating-radial-gradient( gold, gold, gold, white, gold, gold, white);
+  -webkit-text-stroke: 0.045rem black;
+  border: 4px double goldenrod;}
+.Priority3>.task_fav_icon[value="1"]::before{content: '🔥'; 
+  animation-name: Favourited_Background;
+  animation-duration: 1.5s;
+  animation-play-state: running;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+  
+.Favourited { 
+
+  animation-name: Favourited_alert;
+  animation-duration: 10s;
+  animation-play-state: running;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+@keyframes Favourited_alert {
+  from {background: repeating-linear-gradient(180deg, white red, red, red);}
+  1% {opacity: 0.3;}
+  2% {opacity: 0.6; background-color: #000;}
+  5% { }
+  6% {opacity: 1; background: repeating-linear-gradient(360deg, red, red, white, red);}
+  7%,to { }
+}
+@keyframes Favourited_Background{
+  from { background: repeating-radial-gradient( white, gold, gold, white, gold, gold, white); }
+  25%{background: repeating-radial-gradient( gold,white, gold, gold,gold,gold white ,gold);}
+  50%{background: repeating-radial-gradient( gold,white, gold, gold, white gold, gold,gold);}
+  75%{background: repeating-radial-gradient( gold,gold, white, gold,gold, white,gold, gold);}
+  to{ background: repeating-radial-gradient( gold, gold, gold, white, gold, gold, white,gold); }
+}
+
+.task_fav_icon:hover {
+  transform: scale(1.4);
+  opacity: 1;
+}
+.Priority1 {
+  border-color: #adff2f99;
+}
+.Priority2 {
+  border-color: #ffa50099;
+}
+.Priority3 {
+  border-color: #ff000099;
+  color: #0a0a0a;background-color: #ff000099;
+  -webkit-text-stroke: 0.2px #000;
+}
+
+.T_TP25 {
+  animation-duration: 10s;
+}
+.T_TP50 {
+  animation-duration: 5s;
+}
+.T_TP75 {
+  animation-duration: 3s;
+}
+.T_TP1 {
+  animation-duration: 1s;
+}
+.T_TP1::after {
+  content: "🔔";
+}
+.Task-List-Item > input:checked {
+  font-size: x-large;
+  background-color: brown;
+}
+
+/*  Task Confirmation  */
+#Task-Conf-Overlay {
+  position: fixed;
+  overflow: scroll;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  border: 1px solid gold;
+  background-color: aliceblue;
+}
+#Task-Conf {
+  text-align: center;
+  display: block;
+  height: fit-content;
+  min-height: fit-content;
+  top: 2vh;
+  margin: 0 auto;
+  margin-top: 8%;
+  padding: 3.2%;
+  border: 0.8vh double gray;
+  background-color: #afafaf99;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+#Task-Conf::first-line {
+  color: green;
+  font-size: min(2.2em, 10vw);
+  text-decoration: underline;
+  text-decoration-color: crimson;
+  background-color: aliceblue;
+}
+#Task-Conf > p > input[name="action"] {
+  max-width: 34%;
+  text-align: center;
+  display: block;
+  font-size: min(6vw, 1.2rem);
+}
+
+#Task-Conf > p {
+  user-select: none;
+  margin: 0 auto;
+  margin-top: 1.2%;
+  font-size: min(5vw, 1.3rem);
+  color: black;
+  background-color: #fafaff99;
+  border: 2px solid black;
+  padding: 2% 8%;
+}
+
+.TaskConf_action.INSERT {
+  background-color: chartreuse;
+  color: dodgerblue;
+  -webkit-text-stroke: 0.03rem seagreen;
+}
+.TaskConf_action.UPDATE {
+  background-color: lightblue;
+  color: green;
+  -webkit-text-stroke: 0.03rem blue;
+}
+.TaskConf_action.DELETE {
+  background-color: black;
+  color: salmon;
+  -webkit-text-stroke: 0.03rem red;
+}
+
+#task_input {
+  margin: 2%;
+  background-color: #00f;
+}
+#Priority_config {
+  font-size: min(5vw, 0.7rem);
+  border: 0.2rem solid gainsboro;
+  max-width: 3.8rem;
+}
+#Priority_config > * {
+  max-width: 100%;
+  text-align: center;
+}
+
+div[name*="task_to_"] {
+  border: 2px double salmon;
+  padding: 2vh 0.1vh 2vh 0.1vh;
+  margin-top: 4%;
+  background-color: aquamarine;
+  box-shadow: 0 4px 8px rgba(238, 237, 237, 0.529),
+    0 8px 8px rgba(175, 172, 172, 0.23);
+}
+
+[class*="unit"] {
+  display: flex;
+  align-items: center;
+  margin: 1vh 0 0.2vh 0;
+  padding: 0.8vh 0 0.8vh 0;
+  background-color: #f0f8ff99;
+  border: 2px solid lawngreen;
+}
+[class*="_unit"] > * {
+  padding: 0 2%;
+  margin: 2%;
+}
+[class*="_unit"] > p {
+  text-align: left;
+  height: min-content;
+  width: 100%;
+  font-weight: 700;
+  border: 1px solid #00000099;
+}
+.INSERT_unit > p {
+  background-color: #0f0ff155;
+}
+
+/* Yes/No Buttons */
+#Task-Conf > input[value="YES"],
+#Task-Conf > [onclick="RemoveOverlay()"] {
+  width: 22%;
+  margin: 2.4vh 2vh;
+  cursor: pointer;
+}
+#Task-Conf > input[value="YES"]:hover,
+#Task-Conf > [onclick="RemoveOverlay()"]:hover {
+  transform: scale(1.2);
+}

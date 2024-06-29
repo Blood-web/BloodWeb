@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="http://www.bloodweb.net/">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+    <title>Bloodweb-Meowzer Image Slider</title>
+    <link rel="stylesheet" type="text/css" href="captures/public/slider.css"></link> 
+
+    
+</head>
+<body>
+
+    <h1><img src="/favicon.ico" alt="BwebLogo">Bloodweb-<p>Pi</p>Slide</h1>
+    <div id="slide_main" class="Standard_slider">
+        <a class="prev" >&#10094;</a>
+        <a class="next" >&#10095;</a>
+ 
+        <!-- Slider Settings -->
+        
+        <div id="slider_subsection">
+
+            <div class="captiontext">
+                <p id="caption_insert"> Sample text</p>
+            </div>
+
+            <div id="slider_settings">     
+                <div style="text-align: center;" id="slider_dot_div"></div>
+                <span style=" display: flex; justify-content: space-evenly;">
+                    <button id="Slider_dots" class="slider_settings" onclick="toggle_slider_settings(this)">Slider_Dots:ON</button>
+                    <button id="Captions" class="slider_settings" onclick="toggle_slider_settings(this)">Captions:ON</button>
+                    <button id="Img_count" class="slider_settings" onclick="toggle_slider_settings(this)">Img_Counter:ON</button>
+                </span>
+            </div>
+
+        </div>
+        
+    </div> 
+   
+    
+    <script type="text/javascript" src="/KeyFunctions.js"></script>
+    <script type="text/javascript" src="/captures/public/slider.js"></script>
+    <script type="text/javascript">
+        // Oldest >> Newest 
+      build_slider([ {caption:"latest and Greatest"}, {caption:"on bus x4"},{caption:"My webmaster, Your webmaster.. The BLOODWEB x3"},{caption:"Accidentally wiped my harddrive after taking this pic... x2"},{caption:"WE ARE LIVE BABY ~ x1"}]);
+    </script>
+    <!-- Refresh Page on change -->
+<script>
+const ws = new WebSocket('ws://www.bloodweb.net/captures/websocket');
+
+ws.addEventListener('message', (event) => {
+  if (event.data === 'reload') {
+    ws.addEventListener('close', (event) => {
+        console.log('Socket closed gracefully => reloading page');
+        location.reload();
+    });
+    ws.close();
+    // Reload the page when node sends 'reload' data
+  }
+  if (event.data === 'Pmessage'){
+    console.log('Ping message sent');
+  }
+});
+</script>
+
+
+</body>
+</html>

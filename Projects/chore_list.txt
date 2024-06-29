@@ -1,0 +1,6 @@
+Priority 5: INFO page + (device info), (build_info) , (How to)
+Priority 1: Fix this webpages styling
+Priority 4: ADD FRIDGE LABELS :JACK
+Priority 2: add sort functionality (priority,user) :jack
+Priority 3: Add Users to the list :jack
+Priority 1: Clean entryway to walk-in clothes :Kaitlyn

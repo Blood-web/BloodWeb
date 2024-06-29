@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guest Network Control</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .button-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+        .enable_btn{
+            background-color: #4CAF50;
+        }
+        .disable_btn{
+            background-color:red;
+        }
+        /* .button-container button:hover {
+            background-color: #45a049;
+        } */
+        #output {
+            font-size: 14px;
+            white-space: pre-line;
+        }
+    </style>
+</head>
+<body>
+    <h1>SRS_z8i2.guest Network Control</h1>
+    <div class="button-container">
+        <button class="enable_btn" onclick="executeCommand('enable')">Enable Guest Network</button>
+        <button class="disable_btn" onclick="executeCommand('disable')">Disable Guest Network</button>
+    </div>
+    <div id="output"></div>
+
+    <script>
+        function executeCommand(action) {
+            let command;
+            if (action === 'enable') {
+                command = 'ssh BloodWeb@192.168.1.1 -p1024 "nvram set wl0.3_bss_enabled=1; service restart_wireless"';
+            } else if (action === 'disable') {
+                command = 'ssh BloodWeb@192.168.1.1 -p1024 "nvram set wl0.3_bss_enabled=0; service restart_wireless"';
+            }
+
+            fetch('/execute-command', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ command }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                const outputDiv = document.getElementById('output');
+                if (data.error) {
+                    outputDiv.innerText = `Error: ${data.error}`;
+                } else {
+                    outputDiv.innerText = `Output:\n${data.output} Guest network has been ${action}ed`;
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                const outputDiv = document.getElementById('output');
+                outputDiv.innerText = 'An error occurred while executing the command.';
+            });
+        }
+    </script>
+</body>
+</html>

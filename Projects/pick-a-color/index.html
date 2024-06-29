@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pick-A-Color</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>Pick-A-Color</h1>
+    <div id="mainBox" class="grid-container"></div>   
+    <button id="refreshButton">Get New Colors</button>
+    <div class="settingsBox">
+        <div class="basic-settings">
+            <label>
+                Number of Rectangles: 
+                <input type="number" id="colorCount" value="5" min="1" max="64">
+            </label>
+            <label>
+                Shift Locked Rectangles to Left:
+                <input type="checkbox" id="shiftLocked" checked>
+            </label>
+        </div>
+        <button id="toggleAdvancedSettings">Show Advanced Settings</button>
+        <div class="advanced-settings" style="display: none;">
+            <label>
+                Text Color: 
+                <input type="color" id="textColor" value="#000000">
+            </label>
+            <label>
+                Background Color: 
+                <input type="color" id="bgColor" value="#ffffff">
+            </label>
+            <label>
+                Text Alignment: 
+                <select id="textAlign">
+                    <option value="center">Center</option>
+                    <option value="left">Left</option>
+                    <option value="right">Right</option>
+                </select>
+            </label>
+            <button id="lockAllButton">Lock All</button>
+            <button id="unlockAllButton">Unlock All</button>
+        </div>
+     
+        <button id="saveConfigButton">Save Configuration</button>
+        <button id="loadConfigButton">Load Configuration</button>
+        <button id="resetDefaultsButton">Reset to Defaults</button> 
+
+    </div>
+
+    
+    <script src="script.js"> </script>    
+</body>
+</html>

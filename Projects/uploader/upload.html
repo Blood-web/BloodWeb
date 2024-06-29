@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seamless Image Upload</title>
+</head>
+<body>
+<input type="file" id="imageInput" accept="image/*">
+<div id="progressBar" style="display: none;">
+    <div id="progressBarFill"></div>
+</div>
+
+<script>
+document.getElementById('imageInput').addEventListener('change', function() {
+    var file = this.files[0];
+    var formData = new FormData();
+    formData.append('image', file);
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'upload.php');
+
+    xhr.upload.onprogress = function(e) {
+        if (e.lengthComputable) {
+            var percentage = (e.loaded / e.total) * 100;
+            document.getElementById('progressBar').style.display = 'block';
+            document.getElementById('progressBarFill').style.width = percentage + '%';
+        }
+    };
+
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            alert('File uploaded successfully.');
+            document.getElementById('progressBar').style.display = 'none';
+        } else {
+            alert('Error uploading file.');
+        }
+    };
+
+    xhr.send(formData);
+});
+</script>
+</body>
+</html>

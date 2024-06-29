@@ -1,0 +1,73 @@
+:root{
+    --large-font:min(84px,max(18vw,8em));
+    --medium-font:min(62px,max(12vw,4.5em));
+    --small-font:min(48px,max(10vw,4em));
+    
+}
+
+*{
+    margin:0;
+    padding:0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Holds all the pages content*/
+.container {
+    /* max-width: 600px; */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1{
+    font-size: min(84px,max(18vw,8em));
+    -webkit-text-stroke: min(.4vw,.1em) purple;
+    text-align:center;
+}
+
+/* The item to add */
+#addForm{
+    border:.4em double #ffffff55;
+    margin:2dvh 1%;
+    display:flex;
+    justify-content: center;
+}
+#addForm *{
+    font-size: var(--medium-font);
+}
+label{font-size:var(--small-font);}
+/* The list*/
+.chore-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.chore-item > * {
+    font-size:var(--medium-font) ;
+}
+.chore-item button {
+    margin: min(10px,.01em);
+}
+.chore-priority {
+    margin-right: 10px;
+    width: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+.priority_1 {
+    background-color: #ffcccc;
+}
+.priority_2 {
+    background-color: #ffddcc;
+}
+.priority_3 {
+    background-color: #ffeecc;
+}
+.priority_4 {
+    background-color: #ccffcc;
+}
+.priority_5 {
+    background-color: #ccccff;
+}
